@@ -1,7 +1,7 @@
 ---
-title: "Customer Profile: View and Manage Account Details"
+title: "Customer Profile: View, Edit, and Manage Account Details"
 sidebarTitle: "Customer Profile"
-description: "Understand every section of the customer profile — personal details, wallet, packages, invoices, financials, and pre-alerts — and learn how to edit or adjust them."
+description: "Open any customer's full profile to review packages, invoices, wallet, payment history, pre-alerts, and authorized pickup contacts from one place."
 ---
 
 The customer profile is the complete record for a single account. It brings together every piece of information the team needs to support a customer in one place: who they are, what packages they have, what they owe, and a full history of their financial activity. You reach this page by clicking a customer's name anywhere in the backoffice, or by navigating directly to **Customers → [Customer Name]**.
@@ -83,7 +83,7 @@ The profile is organised into five tabs. Click a tab to switch between sections.
     **Wallet Transactions** is the full chronological ledger of the customer's wallet — every top-up, deduction, adjustment, and usage. Each entry shows:
     - Date
     - Description and reference ID
-    - Amount — credits in green with a `+` prefix, debits in red with a `−` prefix
+    - Amount — credits in green with a `+` prefix, debits in red with a `-` prefix
 
     Both panels are independently scrollable and show the 50 most recent records.
   </Tab>
@@ -107,11 +107,11 @@ The profile is organised into five tabs. Click a tab to switch between sections.
 ## Editing customer details
 
 <Steps>
-  <Step title="Locate the customer">
-    Open the customer profile by navigating from the **Customers** list or the global search.
+  <Step title="Go to the Customers list">
+    Navigate to **Customers** in the sidebar to open the customers table.
   </Step>
   <Step title="Open Edit Profile">
-    In the backoffice view, click **Actions → Edit Profile** in the top-right area of the profile header. The Edit Profile modal opens with all current details pre-filled.
+    Find the customer's row and click the **⋯** three-dot menu at the far right. Choose **Edit Profile**. The Edit Profile modal opens with all current details pre-filled.
   </Step>
   <Step title="Update the fields">
     You can edit any of the following:
@@ -119,44 +119,40 @@ The profile is organised into five tabs. Click a tab to switch between sections.
     - **First Name** and **Last Name**
     - **Email address**
     - **Phone number**
-    - **TRN** (Tax Registration Number)
-    - **Street address**, **City**, and **Parish**
+    - **Branch** assignment
   </Step>
   <Step title="Save changes">
-    Click **Save** (or the equivalent submit button). The page reloads and displays a green success banner confirming the update. Changes take effect immediately.
+    Click **Save Customer**. The modal closes and the updated details appear in the list immediately.
   </Step>
 </Steps>
+
+<Tip>
+  To update additional contact details such as mailing address, city, parish, and TRN, open the customer's full profile page and use the edit button (pencil icon) that appears in the Profile Information panel on the Overview tab.
+</Tip>
 
 ---
 
 ## Adjusting the account wallet balance
 
-You may need to manually credit or debit a customer's wallet — for example, to apply a goodwill credit, correct a data-entry error, or reverse a charge.
+You may need to manually credit or debit a customer's wallet — for example, to apply a goodwill credit, correct a data-entry error, or reverse a charge. The current wallet balance is always visible in the **Wallet Balance** stat card at the top of the profile page. A complete chronological ledger of every top-up, deduction, and adjustment appears in the **Financials** tab under **Wallet Transactions**.
 
 <Note>
-  Manual wallet adjustments are logged against your staff account ID and are permanent. The customer receives an automated email notification when their wallet is updated. Always ensure you have appropriate authorisation from your supervisor before making any manual adjustment, and include a clear description so the transaction is auditable.
+  Manual wallet adjustments are logged against your staff account and are permanent. The customer receives an automated email notification when their wallet is updated. Always ensure you have appropriate authorisation from your supervisor before making any manual adjustment, and include a clear description so the transaction is auditable.
 </Note>
 
 <Steps>
-  <Step title="Locate the customer profile">
-    Open the customer's profile page.
+  <Step title="Open the customer's profile">
+    Navigate to **Customers**, find the customer, and open their profile page.
   </Step>
-  <Step title="Open the wallet adjustment modal">
-    In the **Wallet** card on the left side of the profile, click:
+  <Step title="Initiate a wallet adjustment">
+    Use the wallet management controls available to your role. Provide the following details in the adjustment form:
 
-    - **Top Up** — to add credit to the wallet (a `credit` transaction)
-    - **Debit** — to remove credit from the wallet (a `debit` transaction)
-
-    The wallet adjustment modal opens.
-  </Step>
-  <Step title="Enter the adjustment details">
-    Fill in:
-
-    - **Amount** — the value in USD to credit or debit
-    - **Description** — a short explanation of why the adjustment is being made (e.g. "Goodwill credit — delayed delivery", "Correction for duplicate charge")
+    - **Type** — **Top Up** to add credit, or **Debit** to remove credit
+    - **Amount** — the value in USD
+    - **Description** — a short explanation (e.g. "Goodwill credit — delayed delivery", "Correction for duplicate charge")
   </Step>
   <Step title="Confirm the adjustment">
-    Click **Save**. The wallet balance updates immediately and the transaction appears in the **Financials → Wallet Transactions** tab. An email notification is sent to the customer automatically.
+    Submit the form. The wallet balance updates immediately and the new entry appears at the top of the **Wallet Transactions** panel in the **Financials** tab. An email notification is sent to the customer automatically.
   </Step>
 </Steps>
 
@@ -191,7 +187,7 @@ When a customer is at the counter to collect or pay for packages, open the Point
 Click the **Open POS** button in the top-right corner of the profile header. This navigates to the POS screen with the customer pre-loaded, ready to process payments or issue invoices.
 
 <Tip>
-  You can also open the POS directly from the **Customers** list. Click the **⋯** three-dot menu on any row and choose **View Profile**, then click **Open POS** from the profile — or navigate directly via the URL pattern `/pos/[customer-id]`.
+  You can also open the POS directly from the **Customers** list. Click the **⋯** three-dot menu on any row and choose **View Profile**, then click **Open POS** from the profile — or navigate directly to the POS with the customer pre-loaded by using the URL pattern `/pos/[customer-id]`.
 </Tip>
 
 ---

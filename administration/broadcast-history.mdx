@@ -34,7 +34,7 @@ Click anywhere on a row to open the Campaign Report for that broadcast.
 </Accordion>
 
 <Accordion title="Scheduled">
-  The broadcast has been set to go out at a future date and time. It has not yet been sent. You can cancel a scheduled broadcast before it fires — see [Cancelling a Scheduled Broadcast](#cancelling-a-scheduled-broadcast) below.
+  The broadcast has been set to go out at a future date and time. It has not yet been sent. To modify or cancel a scheduled campaign before it fires, open the Campaign Manager and load the corresponding draft — see [Managing Drafts and Scheduled Campaigns](#managing-drafts-and-scheduled-campaigns) below.
 </Accordion>
 
 <Accordion title="Draft">
@@ -65,7 +65,7 @@ Three metric cards across the top of the report show:
 
 ### Message Content
 
-Below the stats cards is a collapsible **Message Content** section. Click the header to expand it and see a rendered preview of exactly what recipients received, including any HTML formatting and personalisation variables as they were resolved at send time.
+Below the stats cards is a collapsible **Message Content** section. Click the header to expand it and see a rendered preview of exactly what recipients received, including any HTML formatting and personalization variables as they were resolved at send time.
 
 ### Recipient Log
 
@@ -92,61 +92,13 @@ The **Recipient Log** table lists every customer who was included in the broadca
 
 ---
 
-## Cancelling a Scheduled Broadcast
+## Managing Drafts and Scheduled Campaigns
 
-If a broadcast has **Scheduled** status and has not yet fired, you can cancel it before the send time.
+Drafts and scheduled campaigns are managed from the **Campaign Manager** composer page, not from the history list. To work with a campaign that has not yet been sent:
 
-<Steps>
-  <Step title="Locate the scheduled campaign">
-    Find the campaign in the list. Scheduled campaigns show a future date in the **Sent Date** column.
-  </Step>
-  <Step title="Open the Campaign Report">
-    Click the row to open the report.
-  </Step>
-  <Step title="Cancel the schedule">
-    Click **Cancel Schedule** in the report header. Confirm the action when prompted. The campaign status changes to **Draft** so you can edit and reschedule it if needed, or delete it entirely.
-  </Step>
-</Steps>
-
-<Warning>
-  Cancellation is only possible before the scheduled send time. If the clock has already passed the scheduled time, the broadcast may already be in the delivery queue and cannot be recalled.
-</Warning>
-
----
-
-## Deleting a Draft
-
-<Steps>
-  <Step title="Open the Campaign Report for the draft">
-    Click the draft row in the campaign list.
-  </Step>
-  <Step title="Click Delete Draft">
-    Click the **Delete Draft** button in the report header. Confirm the deletion when prompted.
-  </Step>
-</Steps>
+- **Drafts** — Navigate to **Marketing → Broadcast** to open the Campaign Manager. Your saved drafts appear in the **Saved Drafts** panel. Click any draft to reload it into the composer, then edit and send or delete it as needed.
+- **Scheduled campaigns** — Scheduled campaigns appear in the Broadcast History list with a future date in the **Sent Date** column. To modify or cancel a scheduled campaign before it fires, open the Campaign Manager and load the corresponding draft, then update the schedule or discard the send.
 
 <Note>
-  Only **Draft** campaigns can be deleted from this page. Sent and scheduled campaigns are retained for your records and cannot be deleted.
+  Sent campaigns are retained in Broadcast History for your records. They cannot be deleted, ensuring you always have a complete audit trail of messages sent to customers.
 </Note>
-
----
-
-## Duplicating a Past Broadcast
-
-Duplicating a sent or draft campaign copies its channel, subject, and body content into the composer as a new draft — useful for recurring announcements or when you want to re-use a previous message as a starting point.
-
-<Steps>
-  <Step title="Open the Campaign Report">
-    Click the campaign you want to re-use.
-  </Step>
-  <Step title="Click Duplicate">
-    Click **Duplicate** in the report header. The system creates a new draft pre-filled with the original campaign's channel, subject, and message content.
-  </Step>
-  <Step title="Edit and send the duplicate">
-    You are taken to the Campaign Manager composer with the duplicate loaded. Adjust the subject, body, and audience as needed, then send or schedule the new campaign.
-  </Step>
-</Steps>
-
-<Tip>
-  Duplicate a high-performing campaign (one with a strong open rate) as the basis for your next send. Reuse the subject line format and tweak only the body content to maintain consistency.
-</Tip>

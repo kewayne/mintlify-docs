@@ -1,7 +1,7 @@
 ---
-title: "Managing Packages in the Shiipp Backoffice"
+title: "Managing Packages in the Shiipp Courier Backoffice"
 sidebarTitle: "Packages"
-description: "Add, search, edit, and update package statuses. Learn how to use bulk actions and generate customs invoices for incoming shipments."
+description: "Log new arrivals, search and filter the package list, edit records, run bulk status updates, and generate customs invoices from one central screen."
 ---
 
 The Packages page is your central workspace for every parcel that moves through the warehouse. From here you can log new arrivals, monitor status, adjust details, run bulk status updates, and produce customs invoices — all without leaving a single screen.
@@ -113,38 +113,20 @@ Use this flow to manually log a package that has physically arrived at the wareh
 
 ## Updating a Single Package Status
 
-To change the status on one package without editing its other details:
-
-<Steps>
-  <Step title="Open the Change Status modal">
-    Click the status badge on the package row, or select **Change Status** from the row's action menu.
-  </Step>
-  <Step title="Select the new status">
-    Click the **Select status** dropdown and choose from the available options. The selected status displays with its colour-coded badge.
-  </Step>
-  <Step title="Add notes (optional)">
-    Enter any details in the **Additional Notes** field. These notes are saved to the package history log and are visible to administrators.
-  </Step>
-  <Step title="Toggle notifications">
-    Enable **Send notifications** if you want the customer to be alerted about this status change.
-  </Step>
-  <Step title="Confirm the update">
-    Click **Update**. The modal closes and the table refreshes.
-  </Step>
-</Steps>
+To change the status on one package, use the Edit modal described above. Open the row's action menu, select **Edit**, then change the **Status** field and click **Save Changes**. For bulk status updates with notification options, see the [Bulk Actions](#bulk-actions) section below.
 
 ---
 
 ## Package Status Reference
 
 <Accordion title="View all package statuses">
-  | Status code | Display name | Meaning |
+  | Status | Display name | Meaning |
   |---|---|---|
   | `at_us_facility` | At Warehouse | Package has arrived and is physically at the US facility |
   | `in_transit_jm` | In Transit | Package is en route to the destination country |
   | `processing_customs` | Processing Customs | Package is undergoing customs clearance |
   | `at_customs` | At Customs | Package is being held at customs |
-  | `ready_for_collection` | Ready for Pickup | Package has cleared customs and is available for customer pickup |
+  | `ready_for_collection` | Ready for Collection | Package has cleared customs and is available for customer pickup |
   | `delivered` | Delivered | Package has been collected or delivered to the customer |
   | `on_hold` | On Hold | Package has been placed on hold pending further action |
 </Accordion>
@@ -162,18 +144,25 @@ When you need to update, notify, or delete multiple packages at once, use the bu
   <Step title="Choose an action">
     Open the **Choose action** dropdown in the bulk action bar. The available actions are:
 
-    - **Send: Ready For Pickup** — updates status and sends a pickup notification
-    - **Send: Arrived at Warehouse** — updates status to arrived
-    - **Send: In Transit** — updates status to in-transit
-    - **Send: Customs Processing** — updates status to customs processing
-    - **Update Status Only** — changes status without sending notifications
+    - **Send: Ready For Pickup** — updates status to Ready for Collection and dispatches a pickup notification
+    - **Send: Arrived at Warehouse** — updates status to At Warehouse and notifies customers
+    - **Send: In Transit** — updates status to In Transit and notifies customers
+    - **Send: Customs Processing** — updates status to Processing Customs and notifies customers
+    - **Update Status Only** — opens the status wizard to change status without sending notifications
     - **Delete Package** — permanently removes the selected packages
     - **Broadcast WhatsApp** — sends a WhatsApp message to the customers of all selected packages
-    - **Broadcast Email** — sends an email notification
-    - **Broadcast Push Notification** — sends a mobile push notification
+    - **Broadcast Email** — sends an email notification to all selected customers
+    - **Broadcast Push Notification** — sends a mobile push notification to all selected customers
   </Step>
   <Step title="Apply the action">
-    Click **Apply Action**. A confirmation or status wizard modal guides you through any additional options (such as choosing the notification channels or a history note) before the action is executed.
+    Click **Apply Action**. For status-related actions, a wizard modal opens with four sections:
+
+    1. **Select Action** — choose **Update & Notify** to change status and send alerts, or **Resend Notifications** to re-send alerts for the current status without changing it.
+    2. **Target Packages** — narrow which packages are affected: all packages, or only those already in a specific status (e.g. only packages currently marked "At Customs").
+    3. **Update Details** — pick the new status from the dropdown and optionally enter a history note (e.g. "Cleared customs and ready for pickup").
+    4. **Dispatch Notifications** — tick any combination of **WhatsApp Alert**, **Email Notice**, and **Push Notification** to control which channels are used.
+
+    Click **Execute Request** to apply the changes.
   </Step>
   <Step title="Clear selection">
     Click **Clear Selection** in the bulk action bar to deselect all packages and dismiss the bar.

@@ -1,7 +1,7 @@
 ---
-title: "Manage Shipping Rate Tables and Pricing Tiers"
+title: "Manage Shipping Rate Tables and Weight-Based Pricing"
 sidebarTitle: "Rates"
-description: "Create and manage shipping rate tables, define weight-based pricing tiers, import bulk CSV rates, and control which rate table is used for live shipment calculations."
+description: "Create and manage shipping rate tables, define weight-based pricing tiers, import bulk CSV rates, and control which table drives live shipment pricing."
 ---
 
 Rate tables define how much customers are charged for shipping based on the weight of their package. Each table contains a list of weight tiers — each tier pairing a specific weight in pounds with the corresponding customer price. You can maintain multiple rate tables simultaneously (for example, separate tables for different service levels or seasonal adjustments), but only one table is **active** at any given time. The active table drives all new shipping charge calculations.
@@ -84,10 +84,9 @@ If you have a pricing schedule in a spreadsheet, you can import it directly as a
   </Step>
 
   <Step title="Prepare your CSV file">
-    Your file must have exactly two columns with no header row:
+    Your file must have exactly two columns with no header row. The first column is the weight in pounds and the second is the customer price:
 
     ```
-    Weight (lbs), Customer Price ($)
     1.0, 5.50
     2.0, 9.00
     3.0, 12.50
