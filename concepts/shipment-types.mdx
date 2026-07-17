@@ -1,0 +1,117 @@
+---
+title: "Shipment Types: Air, Sea, and China Freight"
+sidebarTitle: "Shipment Types"
+description: "Learn the operational differences between Air Freight, Sea Freight, and China Freight in Shiipp — including timelines, identifiers, and how type affects package processing."
+---
+
+Shiipp supports three shipment types that correspond to the three main lanes your packages travel through to reach your facility. Each type has different transit times, cost profiles, and operational characteristics. When staff create or manage shipment manifests, choosing the correct type ensures packages are tracked through the right pipeline and that customers receive accurate timeline expectations.
+
+## Overview
+
+<CardGroup cols={3}>
+  <Card title="Air Freight" icon="airplane-tilt">
+    Fastest transit option. Packages travel by air cargo and typically arrive within days. Identified in the system as `AIR`.
+  </Card>
+  <Card title="Sea Freight" icon="boat">
+    Most cost-effective for heavy or bulky shipments. Packages travel by ocean container and take significantly longer to arrive. Identified in the system as `SEA`.
+  </Card>
+  <Card title="China Freight" icon="globe-hemisphere-east">
+    Dedicated lane for packages originating from China-based merchants and suppliers. Identified in the system as `CHINA`.
+  </Card>
+</CardGroup>
+
+## Air Freight (`AIR`)
+
+Air Freight is the primary lane for time-sensitive parcels and small packages. It is typically used for consumer goods ordered from US-based or international online retailers.
+
+**Operational characteristics:**
+- Shipment manifests use a **flight date** field to record the scheduled departure date of the cargo flight.
+- Packages can be tracked by their **AWB number** (Air Waybill) or the internal **Manifest ID**.
+- Air shipments move through customs quickly relative to sea freight.
+- The dashboard Incoming Shipments table uses the flight date to surface upcoming arrivals.
+
+**Identifying Air Freight in the system:**
+- The shipment type badge displays **Air** with an indigo colour scheme.
+- On the Shipments page, filter by **Air Freight** in the shipment type dropdown to view only air manifests.
+- Tracking numbers on air freight packages typically correspond to a carrier AWB format.
+
+**Typical pipeline flow:**
+Pre-Alert → In Transit → At Customs → Processing Customs → Ready for Collection → Delivered/Picked Up
+
+---
+
+## Sea Freight (`SEA`)
+
+Sea Freight is the economical choice for customers shipping large, heavy, or non-urgent items such as appliances, furniture components, or wholesale goods.
+
+**Operational characteristics:**
+- Transit times are measured in weeks rather than days. Customers should be advised to expect longer wait times when they submit pre-alerts for sea shipments.
+- The **flight date** field on a sea shipment manifest represents the vessel departure date or estimated arrival date depending on your organisation's convention — ensure your team uses it consistently.
+- Sea shipments frequently involve more complex customs procedures, so the `at_customs` and `processing_customs` statuses tend to remain active for longer than with air freight.
+- Bulk status updates are particularly useful for sea freight because a single container can hold a large number of packages for multiple customers.
+
+**Identifying Sea Freight in the system:**
+- The shipment type badge displays **Sea** with an emerald green colour scheme.
+- On the Shipments page, filter by **Sea Freight** in the shipment type dropdown.
+- Sea freight manifests often reference a **container number** or **bill of lading** in the Manifest Code field.
+
+**Typical pipeline flow:**
+Pre-Alert → In Transit → At Customs → Processing Customs → Ready for Collection → Delivered/Picked Up
+
+<Note>
+  Sea freight packages may sit at the `at_customs` or `processing_customs` stages for an extended period during busy seasons or when additional inspection is required. Use the bulk notification feature to proactively update customers during these delays.
+</Note>
+
+---
+
+## China Freight (`CHINA`)
+
+China Freight is a dedicated lane for packages sourced directly from Chinese suppliers, marketplaces (such as Alibaba, AliExpress, or Shein), or freight forwarders based in China. Many courier operations maintain a separate manifest for China-origin goods because of distinct customs documentation requirements and the use of different carrier networks.
+
+**Operational characteristics:**
+- Transit time falls between air and sea freight depending on the specific service — China freight may be moved by air, express sea, or consolidation depending on your agreements with freight partners.
+- China Freight manifests may reference different tracking number formats than Western carriers. The AWB number field accommodates these formats.
+- Customers shipping from China-based vendors should use the China Freight lane when pre-alerting packages so staff can route them to the correct manifest.
+
+**Identifying China Freight in the system:**
+- The shipment type badge displays **China** with an orange colour scheme.
+- On the Shipments page, filter by **China Freight** in the shipment type dropdown.
+
+**Typical pipeline flow:**
+Pre-Alert → In Transit → At Customs → Processing Customs → Ready for Collection → Delivered/Picked Up
+
+---
+
+## How Shipment Type Affects the Dashboard
+
+The **Incoming Shipments** table on the Operations Dashboard shows up to five recent non-delivered shipments across all types. Each row displays the flight date, type badge, and status. You can identify the shipment type at a glance by the colour of the badge:
+
+| Badge Colour | Type |
+|---|---|
+| Indigo | Air Freight |
+| Emerald green | Sea Freight |
+| Orange | China Freight |
+
+## Searching by Shipment Type
+
+On the **Shipments** page you can use the type filter dropdown to narrow the manifest list to a single shipment type. You can also search by:
+
+- **Manifest ID** — the internal identifier assigned when the manifest is created.
+- **AWB number** — the carrier-provided air waybill or tracking reference.
+- **Manifest Code** — an optional secondary reference code (such as a container number for sea freight).
+- **Date range** — filter by the flight/arrival date window.
+
+<Tip>
+  When in doubt about which type to assign a new shipment, check the origin country and carrier of the packages it will contain. Air shipments use AWB numbers, sea shipments use bill-of-lading or container references, and China shipments follow the format of the Chinese express carrier.
+</Tip>
+
+## Shipment Statuses
+
+Regardless of shipment type, all manifests share the same set of shipment-level statuses:
+
+| Status | Meaning |
+|--------|---------|
+| Preparing | The manifest is being assembled; packages are being assigned to it. |
+| In Transit | The shipment has departed and is en route to your facility. |
+| Arrived | The shipment has physically arrived at the facility or port. |
+| Cleared | Customs clearance is complete; packages are ready to be processed. |

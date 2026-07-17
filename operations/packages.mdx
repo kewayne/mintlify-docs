@@ -1,0 +1,205 @@
+---
+title: "Managing Packages in the Shiipp Backoffice"
+sidebarTitle: "Packages"
+description: "Add, search, edit, and update package statuses. Learn how to use bulk actions and generate customs invoices for incoming shipments."
+---
+
+The Packages page is your central workspace for every parcel that moves through the warehouse. From here you can log new arrivals, monitor status, adjust details, run bulk status updates, and produce customs invoices — all without leaving a single screen.
+
+## Navigating to Packages
+
+In the left sidebar, click **Packages**. The page loads and immediately fetches the most recent records. A count badge in the top-right corner of the header shows how many packages are currently displayed. Use the **refresh** button (circular arrows icon) next to the count to pull the latest data at any time.
+
+---
+
+## The Packages Table
+
+Each row in the table represents one package. The columns are sortable — click any column heading to sort ascending; click again to sort descending.
+
+| Column | What it shows |
+|---|---|
+| **Tracking** | The internal house/AWB number assigned by Shiipp |
+| **Description** | Vendor or merchant name (e.g. Amazon, Shein) |
+| **Customer** | The customer the package belongs to |
+| **Weight** | Recorded weight in pounds (lbs) |
+| **Value** | Declared value in USD |
+| **Checked Off** | Whether the package has been scanned through Check-Off & Sort |
+| **Inv Files** | Number of invoice documents attached |
+| **Duty %** | Assigned duty rate for customs purposes |
+| **Status** | Current lifecycle status of the package |
+| **Invoice** | Total invoice amount if one has been generated |
+| **Created** | Date the package record was created |
+
+---
+
+## Searching and Filtering
+
+The filter bar sits at the top of the table card. You can combine any number of filters — they all apply together.
+
+**Search box** — Type a partial tracking number or customer name. Results update as you type.
+
+**Status filter** — Click the **Status (All)** dropdown to select one or more statuses. A badge shows how many statuses are active. Click **Clear** inside the dropdown to remove them, or **Apply** to confirm.
+
+**Invoice Status filter** — Use the **Invoice Status** dropdown to narrow results to packages that are Not Invoiced, Unpaid, Paid, or in Draft.
+
+**Date range** — Enter a **From** date and a **To** date to restrict results to packages created within that window.
+
+**Reset** — Click the **Reset** button to clear every active filter and return to the full list.
+
+---
+
+## Adding a New Package
+
+Use this flow to manually log a package that has physically arrived at the warehouse.
+
+<Steps>
+  <Step title="Open the Add Package modal">
+    Click the **+ Add Package** button in the top-right area of the page. The "Receive New Package" modal opens.
+  </Step>
+  <Step title="Assign a customer">
+    In the **Assign to Customer** field, type at least two characters of the customer's name, email address, or account number. Select the correct customer from the dropdown that appears. Their account number and name will appear in a confirmation chip below the field.
+  </Step>
+  <Step title="Enter the shipper tracking number">
+    Paste or type the carrier's tracking number (e.g. the UPS, FedEx, or USPS barcode number) into **Shipper Tracking #**. The system automatically attempts to detect the carrier and pre-fill any existing pre-alert data linked to that number.
+  </Step>
+  <Step title="Enter the house / AWB number (optional)">
+    If your warehouse uses an internal reference number, enter it in the **House # / AWB Number** field.
+  </Step>
+  <Step title="Confirm the courier">
+    The **Courier/Carrier** dropdown auto-selects the detected carrier. Change it manually if the detection is incorrect.
+  </Step>
+  <Step title="Add vendor and description">
+    Enter the **Vendor / Merchant** name (e.g. "Amazon") and a clear **Item Description** (e.g. "Apple Watch, Men Shoes"). The description is required and will appear on invoices and customer notifications.
+  </Step>
+  <Step title="Set the weight">
+    Enter the package weight in pounds in the **Weight (Lbs)** field.
+  </Step>
+  <Step title="Toggle customer notification">
+    The **Notify Customer** toggle is on by default. Turn it off if you do not want the customer to receive an arrival notification.
+  </Step>
+  <Step title="Register the package">
+    Click **Register Package**. A success toast confirms the package was added and the table refreshes automatically.
+  </Step>
+</Steps>
+
+<Note>
+  You must select a customer before you can register a package. The **Register Package** button will show an alert if no customer is chosen.
+</Note>
+
+---
+
+## Editing a Package
+
+<Steps>
+  <Step title="Open the edit modal">
+    Click the action menu (three-dot icon) at the end of any package row and select **Edit**, or click directly on the tracking number. The Edit Package modal opens, showing the carrier logo, current status badge, and a quick-info summary at the top.
+  </Step>
+  <Step title="Update the editable fields">
+    The following fields are editable:
+
+    - **Vendor** — the merchant or shipper name
+    - **Courier** — re-assign to a different carrier
+    - **Weight (lbs)** — corrected weight
+    - **Declared Value (USD)** — value used for duty calculations
+    - **Description** — item description
+    - **Status** — see the status reference below
+  </Step>
+  <Step title="Save changes">
+    Click **Save Changes**. The modal closes and the table reloads with the updated values.
+  </Step>
+</Steps>
+
+---
+
+## Updating a Single Package Status
+
+To change the status on one package without editing its other details:
+
+<Steps>
+  <Step title="Open the Change Status modal">
+    Click the status badge on the package row, or select **Change Status** from the row's action menu.
+  </Step>
+  <Step title="Select the new status">
+    Click the **Select status** dropdown and choose from the available options. The selected status displays with its colour-coded badge.
+  </Step>
+  <Step title="Add notes (optional)">
+    Enter any details in the **Additional Notes** field. These notes are saved to the package history log and are visible to administrators.
+  </Step>
+  <Step title="Toggle notifications">
+    Enable **Send notifications** if you want the customer to be alerted about this status change.
+  </Step>
+  <Step title="Confirm the update">
+    Click **Update**. The modal closes and the table refreshes.
+  </Step>
+</Steps>
+
+---
+
+## Package Status Reference
+
+<Accordion title="View all package statuses">
+  | Status code | Display name | Meaning |
+  |---|---|---|
+  | `at_us_facility` | At Warehouse | Package has arrived and is physically at the US facility |
+  | `in_transit_jm` | In Transit | Package is en route to the destination country |
+  | `processing_customs` | Processing Customs | Package is undergoing customs clearance |
+  | `at_customs` | At Customs | Package is being held at customs |
+  | `ready_for_collection` | Ready for Pickup | Package has cleared customs and is available for customer pickup |
+  | `delivered` | Delivered | Package has been collected or delivered to the customer |
+  | `on_hold` | On Hold | Package has been placed on hold pending further action |
+</Accordion>
+
+---
+
+## Bulk Actions
+
+When you need to update, notify, or delete multiple packages at once, use the bulk action bar.
+
+<Steps>
+  <Step title="Select packages">
+    Tick the checkbox on each row you want to include. To select every visible row at once, tick the checkbox in the table header. The **Bulk Action Bar** appears above the table showing the count of selected packages.
+  </Step>
+  <Step title="Choose an action">
+    Open the **Choose action** dropdown in the bulk action bar. The available actions are:
+
+    - **Send: Ready For Pickup** — updates status and sends a pickup notification
+    - **Send: Arrived at Warehouse** — updates status to arrived
+    - **Send: In Transit** — updates status to in-transit
+    - **Send: Customs Processing** — updates status to customs processing
+    - **Update Status Only** — changes status without sending notifications
+    - **Delete Package** — permanently removes the selected packages
+    - **Broadcast WhatsApp** — sends a WhatsApp message to the customers of all selected packages
+    - **Broadcast Email** — sends an email notification
+    - **Broadcast Push Notification** — sends a mobile push notification
+  </Step>
+  <Step title="Apply the action">
+    Click **Apply Action**. A confirmation or status wizard modal guides you through any additional options (such as choosing the notification channels or a history note) before the action is executed.
+  </Step>
+  <Step title="Clear selection">
+    Click **Clear Selection** in the bulk action bar to deselect all packages and dismiss the bar.
+  </Step>
+</Steps>
+
+<Warning>
+  **Delete Package** is permanent. There is no undo. Verify your selection carefully before applying a delete action.
+</Warning>
+
+---
+
+## Customs Invoices
+
+Customs invoice documents can be attached to individual packages or generated in bulk.
+
+**Attaching an invoice file to one package** — Click the **Inv Files** count on the package row to open the attachment panel. Click the upload area or drag a PDF, image, Word, or Excel file onto it. The file is saved and the count updates immediately.
+
+**Generating a bulk customs invoice** — Select the packages you want to include using the checkboxes, open the bulk action dropdown, and choose the customs invoice option. The system groups the selected packages and produces a downloadable invoice document.
+
+<Tip>
+  Use the **Invoice Status** filter to quickly find all packages marked "Not Invoiced" so you can batch-process them together.
+</Tip>
+
+---
+
+## Pagination and Row Limits
+
+The table paginates automatically. Use the **Rows** selector at the bottom of the table to display 25, 50, 100, 150, 200, or 500 rows per page. Use the **Page** selector or the **Previous / Next** buttons to move between pages. The pagination info label shows the current range and total count.

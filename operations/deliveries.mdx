@@ -1,0 +1,111 @@
+---
+title: "Daily Dispatch: Scheduling and Tracking Home Deliveries"
+sidebarTitle: "Deliveries"
+description: "Schedule home delivery requests, assign routes, update delivery statuses, adjust fees, and visualise all active deliveries on an interactive map."
+---
+
+The Daily Dispatch page is where your team manages home delivery operations — scheduling requests, tracking which deliveries are on the road, and pinpointing every drop-off address on an interactive map. Rather than managing deliveries through a flat spreadsheet, Daily Dispatch gives you a split-view layout with a live schedule on the left and a geographic overview on the right, so you can see at a glance how your drivers are distributed across the service area.
+
+<Note>
+The Daily Dispatch feature was marked **COMING SOON** during initial development. Availability may be limited in your deployment. If the page is not accessible from your sidebar, contact your system administrator to confirm whether the feature has been enabled for your account.
+</Note>
+
+## The split-view layout
+
+When you open Daily Dispatch, the page divides into two panels:
+
+<CardGroup cols={2}>
+  <Card title="Schedule list (left)" icon="list-bullets">
+    A scrollable list of every delivery request for the selected date. Each card shows the customer name, phone number, delivery address, current status badge, delivery fee, and quick-action controls.
+  </Card>
+  <Card title="Map (right)" icon="map-pin">
+    An interactive map (powered by OpenStreetMap via Leaflet) showing a coloured pin for every delivery that has coordinates set. The map auto-fits its zoom level to show all pins at once.
+  </Card>
+</CardGroup>
+
+## Selecting a date
+
+Use the **date picker** in the top-right of the page header to switch between days. Changing the date reloads both the schedule list and the map pins automatically. The page always opens on today's date by default.
+
+## Delivery statuses
+
+| Status | Meaning |
+|---|---|
+| **Pending** | The delivery request has been submitted but not yet confirmed or assigned to a driver. |
+| **Confirmed** | The request has been acknowledged and accepted by your operations team. |
+| **Processing** | The packages are being pulled from the warehouse and prepared for loading. |
+| **Out for Delivery** | A driver has collected the packages and is currently on route to the customer's address. |
+| **Completed** | The packages have been successfully delivered to the customer. |
+| **Cancelled** | The delivery was cancelled. The request remains in the system for record-keeping. |
+
+Status badges in the schedule list are colour-coded — amber for pending, blue for confirmed, indigo for processing, sky blue for out for delivery, green for completed, and red for cancelled.
+
+## Creating a new delivery request
+
+<Steps>
+  <Step title="Click New Request">
+    Click the **New Request** button in the top-right of the page header. The delivery editor opens as a full-screen modal with a form on the left and a map panel on the right.
+  </Step>
+  <Step title="Select the customer">
+    Type the customer's name or email in the **Customer / User** field. A dropdown of matching accounts appears as you type. Click the correct customer to select them and link the delivery to their account.
+  </Step>
+  <Step title="Enter the delivery address">
+    Type the street address in the **Delivery Address** field. As you type, Google Places Autocomplete suggests matching addresses. Selecting a suggestion automatically fills in the **City**, **Parish**, and the map coordinates.
+  </Step>
+  <Step title="Confirm the city and parish">
+    If the address autocomplete did not fill in the city and parish correctly, type them manually. Select the correct parish from the dropdown — all 14 Jamaican parishes are listed.
+  </Step>
+  <Step title="Set contact and scheduling details">
+    Enter the customer's **Contact Phone** number and the **Requested Date** for delivery. Add any **Special Instructions** (gate codes, landmarks, access notes) in the text area.
+  </Step>
+  <Step title="Set the delivery fee">
+    Enter the **Delivery Fee** in the fee field. The fee is shown on the customer's delivery card and used for billing purposes. You can adjust it at any time after saving.
+  </Step>
+  <Step title="Pin the location on the map">
+    The right panel of the modal shows a Leaflet map. If the address autocomplete set the coordinates correctly, you will see a pin already placed. To adjust the exact drop-off point, click anywhere on the map — the pin moves to that spot and the latitude and longitude values update below the map. Alternatively, click **Find Address** to re-geocode the address fields.
+  </Step>
+  <Step title="Save the delivery">
+    Click **Save Delivery**. The new request appears in the schedule list with a **Pending** status, and a coloured pin appears on the main map.
+  </Step>
+</Steps>
+
+## Viewing a delivery on the map
+
+Click any delivery card in the schedule list to focus the map on that delivery. The map smoothly pans and zooms to the pin's location and opens a popup showing the customer name, address, current status, and delivery fee.
+
+Map pin colours correspond to delivery status:
+- **Amber** — Pending
+- **Sky blue** — Out for Delivery
+- **Green** — Completed
+- **Dark slate** — All other statuses
+
+## Updating a delivery status quickly
+
+You do not need to open the edit form to change a status. Each delivery card in the schedule list has an inline **status dropdown** in the bottom-right corner. Change the value and it saves immediately without any confirmation step.
+
+## Editing a delivery request
+
+Hover over any delivery card and click the **pencil icon** to open the full edit form. All fields are editable, including the customer, address, fee, and map pin. Click **Save Delivery** to apply your changes.
+
+## Adjusting delivery fees
+
+<Tabs>
+  <Tab title="From the edit form">
+    Open the delivery editor by clicking the pencil icon on the card, update the **Delivery Fee** field, and click **Save Delivery**.
+  </Tab>
+  <Tab title="At creation">
+    Enter the correct fee in the **Delivery Fee** field when creating a new request. The system does not calculate fees automatically — you set the amount manually based on your distance or zone pricing.
+  </Tab>
+</Tabs>
+
+## Deleting a delivery request
+
+Open the delivery editor (click the pencil icon on the card), then click the red **Delete Request** link in the bottom-left of the modal footer. A confirmation dialog appears before the deletion proceeds. Deleted requests are permanently removed.
+
+<Warning>
+Deleting a delivery request cannot be undone. If a delivery needs to be cancelled rather than removed from the system entirely, change the status to **Cancelled** instead of deleting the record.
+</Warning>
+
+<Tip>
+If a customer's address cannot be found by the autocomplete or the **Find Address** geocoder, zoom in on the map in the modal and click the exact delivery location manually to drop the pin at the correct coordinates. The latitude and longitude display at the bottom of the map panel confirms the pin position.
+</Tip>

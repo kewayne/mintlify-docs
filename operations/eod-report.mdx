@@ -1,0 +1,116 @@
+---
+title: "Generating and Printing the End-of-Day Shift Report"
+sidebarTitle: "EOD Report"
+description: "Run the end-of-day reconciliation report to verify cash and card totals, confirm package counts, and close out your shift with an accurate summary."
+---
+
+The End-of-Day (EOD) Report is the daily reconciliation tool for every agent and branch administrator. It tallies all payments collected during a shift — broken down by payment method — and produces a printable summary you can use to verify your cash drawer, reconcile card totals, and confirm the total number of transactions processed. Administrators can also run the report for a specific date in the past or filter it by a single agent to audit individual performance.
+
+---
+
+## Who Sees What
+
+The report adapts automatically based on your role:
+
+- **Agents** see only their own transactions for the current date. No filter controls are shown.
+- **Administrators** see the admin filter bar, which allows choosing any date and filtering by any agent in the system, or viewing all agents combined.
+
+---
+
+## Running the Report
+
+<Steps>
+  <Step title="Open the EOD Report page">
+    Navigate to **End of Day Report** in the sidebar. The report loads automatically for **today** and your current user account (or all agents, if you are an administrator).
+  </Step>
+  <Step title="Select a date (administrators only)">
+    In the **Report Date** field, choose the date you want to review. Leave it as today to run the standard end-of-day close. Change it to any past date to run a historical report.
+  </Step>
+  <Step title="Select an agent (administrators only)">
+    Use the **Select Agent** dropdown to filter the report to a single agent, or leave it set to **All Agents (System-wide)** for a branch-wide total.
+  </Step>
+  <Step title="Click Load Report">
+    The summary cards and transaction breakdown table refresh with data for your selected date and agent scope.
+  </Step>
+</Steps>
+
+<Tip>
+  Run the report per-agent during branch reconciliation to compare each cashier's collected totals against their physical cash drawer. If the totals do not match, drill into the transaction table below to identify the discrepancy by transaction ID or customer name.
+</Tip>
+
+---
+
+## What the Report Contains
+
+### Summary Cards
+
+The dynamic summary ribbon shows one card per active payment method, plus a grand total card at the end. Cards appear only for methods that recorded at least one transaction on the selected date — methods with no activity are omitted for clarity.
+
+Each card shows the method name and the total amount collected through that method during the period. Example cards you may see:
+
+<CardGroup cols={3}>
+  <Card title="Cash" icon="money">
+    Total cash received at the counter during the shift.
+  </Card>
+  <Card title="Card" icon="credit-card">
+    Total card (point-of-sale terminal) payments processed.
+  </Card>
+  <Card title="Wallet" icon="wallet">
+    Total customer wallet (account credit) applied to invoices.
+  </Card>
+  <Card title="Bank Transfer" icon="bank">
+    Total payments received via direct bank transfer or wire.
+  </Card>
+  <Card title="Total Processed" icon="sigma">
+    Grand total across all methods, plus the transaction count for the period.
+  </Card>
+</CardGroup>
+
+### Transaction Breakdown Table
+
+Below the summary cards is a detailed table listing every individual transaction included in the report:
+
+| Column | Description |
+|---|---|
+| **Time / ID** | The time the transaction was processed and its unique reference ID |
+| **Customer** | The customer's name as recorded at the time of payment |
+| **Agent** | The cashier who processed the transaction *(admin view only)* |
+| **Method** | The payment method used |
+| **Amount** | The amount collected for that transaction |
+
+---
+
+## Printing the Report
+
+<Steps>
+  <Step title="Generate the report for the correct date and agent scope">
+    Confirm that the summary cards and transaction table show the data you want to print.
+  </Step>
+  <Step title="Click Print Report">
+    Click the **Print Report** button in the top-right corner of the page. Your browser's print dialog opens.
+  </Step>
+  <Step title="Choose your printer and confirm">
+    Select your printer and click Print. The report is formatted for clean paper output — the filter bar, navigation, and sidebar are all hidden in print mode. A printable header is added automatically showing the report date, scope (agent name or system-wide), the date generated, and the name of the user who generated it.
+  </Step>
+</Steps>
+
+<Note>
+  The printed report includes a professional header with the report date and scope, and a footer with the generation timestamp. Keep printed EOD reports on file as supporting documentation for cash drawer audits and branch accounting records.
+</Note>
+
+---
+
+## Using the EOD Report for Cash Reconciliation
+
+At the end of each shift:
+
+1. **Count your physical cash drawer.** Note the total cash on hand minus any opening float.
+2. **Run the EOD Report** for today filtered to your agent name.
+3. **Compare the Cash card total** in the summary ribbon with your counted cash.
+4. If the figures match, your drawer is balanced.
+5. If there is a discrepancy, scroll through the transaction breakdown table and look for any entry that seems incorrect — check the amount and the customer name against any paper records you have from the shift.
+6. Report any unresolved discrepancies to your branch administrator before closing the drawer.
+
+<Tip>
+  If you process transactions both at the counter and via bank transfer, check each method card separately rather than relying on the Grand Total alone. A correct grand total can still hide an over-count in cash offset by an under-count in transfers.
+</Tip>

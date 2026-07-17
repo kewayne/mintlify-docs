@@ -1,0 +1,99 @@
+---
+title: "How to Log In to the Shiipp Backoffice"
+sidebarTitle: "Logging In"
+description: "Step-by-step guide to accessing the Shiipp agent portal, signing in with your staff credentials, handling two-factor authentication, and logging out securely."
+---
+
+Every member of your courier team needs a staff account to access the backoffice. The login page is the gateway to the entire dashboard — it validates your identity before granting access to any operational data. This guide walks you through the full sign-in process, including what to do if you forget your password or are prompted for a second factor.
+
+## Accessing the Login Page
+
+Open your web browser and navigate to your organisation's backoffice URL. The login page is labelled **Agent Portal** and displays the "Sign in to workspace" heading along with your company logo. If you are already authenticated, the system automatically redirects you to the Operations Dashboard without requiring you to fill in the form again.
+
+<Tip>
+  Use a modern browser such as Google Chrome, Mozilla Firefox, Microsoft Edge, or Safari for the best experience. JavaScript must be enabled.
+</Tip>
+
+## Signing In
+
+<Steps>
+  <Step title="Enter your email address">
+    Type the email address associated with your staff account into the **Email Address** field. Use the address your administrator set up for you — typically your work email.
+  </Step>
+
+  <Step title="Enter your password">
+    Type your password into the **Password** field. Click the eye icon on the right side of the field to toggle password visibility if you need to check what you have typed.
+  </Step>
+
+  <Step title="Click Sign In to Dashboard">
+    Click the **Sign In to Dashboard** button. The button shows a loading spinner while your credentials are being verified against the server.
+  </Step>
+
+  <Step title="Complete two-factor authentication (if required)">
+    If your account has two-factor authentication enabled, the form switches to a verification step after your credentials are accepted. Enter the **6-digit code** from your authenticator app and click **Verify & Continue**.
+
+    <Note>
+      The code must be exactly 6 digits. If you need to use a different account, click **Change account** to return to the credentials step.
+    </Note>
+  </Step>
+
+  <Step title="Wait for the redirect">
+    On success, the button briefly turns green and displays "Success! Redirecting…". You are then taken directly to the Operations Dashboard.
+  </Step>
+</Steps>
+
+## Forgot Your Password?
+
+If you cannot remember your password, you can request a recovery link from the login page.
+
+<Steps>
+  <Step title="Click Forgot password?">
+    On the login form, click the **Forgot password?** link located next to the Password label. The form switches to password-reset mode with the heading "Reset your password".
+  </Step>
+
+  <Step title="Enter your admin email address">
+    Type the email address registered to your staff account and click **Send Recovery Link**.
+  </Step>
+
+  <Step title="Check your inbox">
+    If an account exists for that address, you will receive an email containing a recovery link. Follow the instructions in that email to set a new password.
+  </Step>
+
+  <Step title="Return to sign in">
+    After resetting your password, click **Back to sign in** on the login page and sign in with your new credentials.
+  </Step>
+</Steps>
+
+<Warning>
+  Recovery links are time-sensitive. If the link has expired by the time you click it, return to the login page and request a new one.
+</Warning>
+
+## Session Behaviour and Logging Out
+
+Your session token is stored in the browser's local storage. The dashboard continuously validates this token in the background. If your session expires or your account is deactivated, you are automatically redirected back to the login page and your stored token is cleared.
+
+To log out manually:
+
+1. Click your **profile avatar** in the top-right corner of any page.
+2. Click **Logout** from the dropdown menu.
+
+<Note>
+  Logging out clears your session token, refresh token, and user profile data from the browser. Always log out when using a shared or public computer.
+</Note>
+
+## Tips and Troubleshooting
+
+<CardGroup cols={2}>
+  <Card title="Invalid credentials error" icon="x-circle">
+    Double-check that Caps Lock is off and that you are using the correct email address. Contact your administrator if you are locked out.
+  </Card>
+  <Card title="Network connection error" icon="wifi-slash">
+    This message means the browser could not reach the server. Check your internet connection and try again.
+  </Card>
+  <Card title="Automatically redirected on load" icon="arrows-clockwise">
+    If you are taken straight to the dashboard without seeing the form, you still have an active session. Use the profile menu to switch accounts or log out.
+  </Card>
+  <Card title="Two-factor code not working" icon="shield-warning">
+    Ensure your device's clock is synchronised. TOTP codes are time-based and become invalid after 30 seconds.
+  </Card>
+</CardGroup>

@@ -1,13 +1,11 @@
 {
-  "$schema": "https://mintlify.com/docs.json",
-  "name": "Shiipp Courier",
+  "projectType": "saas",
+  "projectName": "Shiipp Courier",
+  "projectDescription": "A full-featured courier backoffice platform that lets courier staff manage packages, shipments, customers, payments, deliveries, and reports from a single admin dashboard.",
   "theme": "maple",
-  "colors": {
-    "primary": "#635bff",
-    "light": "#e0e7ff",
-    "dark": "#3730a3"
-  },
-  "favicon": "/favicon.svg",
+  "primaryColor": "#635bff",
+  "lightColor": "#e0e7ff",
+  "darkColor": "#3730a3",
   "navigation": {
     "tabs": [
       {
@@ -100,5 +98,47 @@
         ]
       }
     ]
-  }
+  },
+  "keyFeatures": [
+    "Operations Dashboard with real-time KPIs",
+    "Package intake, barcode scanning, and check-off sorting",
+    "Shipment manifest management (Air, Sea, China freight)",
+    "Pre-alert management for inbound packages",
+    "Backroom fulfillment with live customer queue",
+    "Point of Sale (POS) for in-person payment processing",
+    "Invoice generation and billing management",
+    "Transaction reporting and daily revenue tracking",
+    "End-of-Day (EOD) report with print support",
+    "Customer management with account balances and activity",
+    "Daily Dispatch & Delivery routing with map view",
+    "Campaign broadcast manager (email/SMS to customers)",
+    "Configurable shipping rate tables",
+    "Branch and warehouse location management",
+    "Payment gateway integration (Stripe, WiPay, Fygaro)",
+    "Role-based access control and user management",
+    "Customizable notification/email templates",
+    "Platform branding and customization settings"
+  ],
+  "publicApiSurface": [
+    "GET /api/admin/dashboard-summary.php",
+    "GET /api/admin/packages.php",
+    "POST /api/admin/record-package.php",
+    "POST /api/admin/update-package-status.php",
+    "GET /api/admin/shipments.php",
+    "GET /api/admin/customers.php",
+    "GET /api/admin/customer-data.php",
+    "GET /api/admin/deliveries.php",
+    "POST /api/admin/create-shipment.php",
+    "GET /api/admin/invoices.php",
+    "POST /api/admin/manage-invoice.php",
+    "GET /api/admin/transactions.php",
+    "POST /api/admin/record-payment.php",
+    "POST /api/admin/void-transaction.php",
+    "GET /api/admin/rates_manager.php",
+    "GET /api/admin/locations.php",
+    "GET /api/settings/payment.php",
+    "POST /api/admin/broadcast-data.php",
+    "GET /api/admin/check_off.php",
+    "GET /api/admin/eod.php"
+  ]
 }

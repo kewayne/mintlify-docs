@@ -1,0 +1,187 @@
+---
+title: "Campaign Manager: Send Broadcasts to Customers"
+sidebarTitle: "Broadcast"
+description: "Compose and send email, WhatsApp, and push notification campaigns to targeted customer groups, individual recipients, or your entire verified customer base."
+---
+
+The Campaign Manager is your central hub for reaching customers directly. From here you can write and send emails, WhatsApp messages, and mobile push notifications — targeting everyone at once, a specific package-status segment, or hand-picked individuals. You can also save work-in-progress messages as drafts and schedule broadcasts to go out at a future time.
+
+## Accessing the Campaign Manager
+
+Navigate to **Marketing → Broadcast** in the left sidebar. The page title reads **Campaign Manager**.
+
+From any page in the backoffice you can also click **New Campaign** on the Broadcast History page, or use the floating Campaign Manager window that can be launched from supported shipment views.
+
+---
+
+## Choosing a Channel
+
+At the top of the composer, select the channel you want to use:
+
+<CardGroup cols={3}>
+  <Card title="Email" icon="envelope">
+    Sends a fully formatted HTML email. Supports rich text, images, and personalisation variables. Open-rate tracking is available for email campaigns.
+  </Card>
+  <Card title="WhatsApp" icon="whatsapp">
+    Sends a plain-text message via WhatsApp. Use `*asterisks*` for bold text. No HTML or images are supported.
+  </Card>
+  <Card title="Push Notification" icon="bell">
+    Sends a mobile push notification to customers who have the app installed. Supports a title, short body, an optional image URL, and an optional deep-link route.
+  </Card>
+</CardGroup>
+
+---
+
+## Composing Your Message
+
+### Email
+
+<Steps>
+  <Step title="Select a template (optional)">
+    Choose a pre-built template from the **Template** dropdown to pre-fill the subject and body. Select **Start from scratch…** to begin with a blank canvas.
+  </Step>
+  <Step title="Write the subject line">
+    Enter a concise, descriptive subject in the **Subject Line** field. This is the first thing recipients see in their inbox — aim for under 60 characters.
+  </Step>
+  <Step title="Mark as a marketing campaign if applicable">
+    Tick **Marketing Campaign** if this message is promotional rather than transactional. This automatically adds a one-click unsubscribe link and excludes customers who have opted out of marketing.
+  </Step>
+  <Step title="Write the email body">
+    Use the rich text editor (powered by TinyMCE) to compose your message. The toolbar gives you access to headings, bold, italic, bullet lists, links, and images. To insert a personalisation variable, click **Insert Variable** in the toolbar and choose from the menu.
+  </Step>
+</Steps>
+
+<Tip>
+  Load a saved template first to set a solid structure, then customise the subject and body copy before sending. This is faster than starting from scratch every time.
+</Tip>
+
+### WhatsApp
+
+Type your message in the plain-text content box. You cannot use HTML here — formatting is limited to WhatsApp's own conventions (e.g. `*bold*`). Click any variable chip below the content box to insert it at the cursor position.
+
+### Push Notification
+
+Fill in the **Notification Title** (shown in bold on the device), the **Notification Body** (keep it to one or two short sentences), and optionally a **Image URL** and a **Deep Link / Route** (e.g. `/dashboard`) that opens a specific screen in the app when the user taps the notification.
+
+---
+
+## Personalisation Variables
+
+Insert dynamic variables to address each customer by name or reference their account. The following variables are available across all channels:
+
+| Variable | Replaced with |
+|---|---|
+| `{first_name}` | Customer's first name |
+| `{last_name}` | Customer's last name |
+| `{member_id}` | Customer's account ID |
+| `{email}` | Customer's email address *(email channel only)* |
+| `{phone_number}` | Customer's phone number *(email channel only)* |
+
+For email, use the **Insert Variable** toolbar button. For WhatsApp and push notifications, click the labelled chip buttons displayed below the content area.
+
+---
+
+## Selecting Recipients
+
+The **Audience** panel on the right side of the page controls who receives your broadcast. A live recipient count updates as you change your selection.
+
+<Tabs>
+  <Tab title="By Group">
+    Select **By Group** and choose a segment from the dropdown:
+
+    | Segment | Who it targets |
+    |---|---|
+    | All Verified Customers | Every customer with a verified account |
+    | Ready for Pickup | Customers with packages awaiting collection |
+    | At US Facility | Customers with packages currently at the US warehouse |
+    | In Transit to Country | Customers with packages en route |
+    | Unpaid Balance | Customers who have an outstanding balance |
+    | No Packages (Inactive) | Customers who have no active packages |
+
+    Click the eye icon next to the recipient count to preview the list of matching customers before you send.
+  </Tab>
+  <Tab title="Specific People">
+    Select **Specific People** and type a customer's name into the search box. Select them from the results to add them as a recipient. Add as many individuals as needed. Remove someone by clicking the **×** next to their name tag.
+  </Tab>
+</Tabs>
+
+---
+
+## Previewing the Message
+
+A **Live Preview** panel on the right side of the page shows how your message will appear to recipients as you type:
+
+- **Email** — renders in a sandboxed iframe using the same styles that recipients will see.
+- **WhatsApp** — displays a simulated WhatsApp chat bubble.
+- **Push notification** — shows a realistic device notification card.
+
+To see the preview at full size, click the **expand** icon (⤢) in the top-right corner of the preview panel. The full-size modal is especially useful for reviewing HTML email layouts before sending.
+
+---
+
+## Saving as a Draft
+
+If your message is not ready to send, save it so you can return later.
+
+<Steps>
+  <Step title="Click Draft">
+    Click the **Draft** button at the bottom of the Audience panel. The campaign is saved immediately with its current subject, content, channel, and audience settings.
+  </Step>
+  <Step title="Return to your draft">
+    Your saved drafts appear in the **Saved Drafts** panel below the Live Preview. Click any draft to reload it into the composer. You will be asked to confirm before the current composer contents are replaced.
+  </Step>
+</Steps>
+
+<Tip>
+  Use drafts to stage a campaign for review by another team member before it goes out. Save the draft, share the backoffice link, and let a colleague review the preview before you hit Send.
+</Tip>
+
+---
+
+## Scheduling a Broadcast
+
+<Steps>
+  <Step title="Enable scheduling">
+    In the Audience panel, tick **Schedule for later**.
+  </Step>
+  <Step title="Set the date and time">
+    Use the date-and-time picker that appears to choose when the broadcast should go out. Times are interpreted in the server's configured timezone.
+  </Step>
+  <Step title="Click Schedule">
+    Click the **Schedule** button. The campaign is queued and will be dispatched automatically at the specified time. You can view and cancel it from the Broadcast History page until it fires.
+  </Step>
+</Steps>
+
+<Note>
+  The Schedule button only becomes active once you have selected a date and time. If the date picker is blank, the button remains disabled.
+</Note>
+
+---
+
+## Sending Immediately
+
+<Steps>
+  <Step title="Confirm your audience">
+    Check the recipient count in the Audience panel. If it looks wrong, adjust your segment or individual selection.
+  </Step>
+  <Step title="Review the preview">
+    Scroll the Live Preview panel and confirm the subject, body copy, and personalisation look correct.
+  </Step>
+  <Step title="Click Send Now">
+    Click the **Send Now** button. The system dispatches the broadcast to all selected recipients. You are redirected to Broadcast History when sending is complete.
+  </Step>
+</Steps>
+
+<Warning>
+  Sent broadcasts cannot be recalled. Once you click **Send Now**, messages are immediately queued for delivery to all recipients. Double-check your audience selection and message content in the preview before confirming.
+</Warning>
+
+---
+
+## Best Practices
+
+- **Subject lines** — Keep email subjects under 60 characters so they display fully in most inboxes.
+- **WhatsApp messages** — Aim for a single clear paragraph. Very long messages may be truncated on some devices.
+- **Push notification bodies** — Two sentences or fewer. The device will cut off longer text with an ellipsis.
+- **Marketing flag** — Always tick **Marketing Campaign** for promotional sends (offers, newsletters, announcements). Leave it unticked only for transactional or operational messages (e.g. shipment updates).
+- **Test with a small audience first** — Use **Specific People** to send a test to yourself or a colleague before broadcasting to your full customer base.

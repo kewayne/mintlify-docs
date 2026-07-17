@@ -1,0 +1,128 @@
+---
+title: "Managing Customers in the Shiipp Backoffice"
+sidebarTitle: "Customers"
+description: "Browse, search, filter, and sort every registered customer, view account balances and activity, and register new customers from one place."
+---
+
+The Customers page is your central registry for every account that has been created on the platform. At a glance you can see who each customer is, how to reach them, which branch they belong to, what their current wallet balance is, and when they last logged in. From this page you can jump directly to a customer's full profile, add brand-new accounts, or bulk-upload customers via a spreadsheet.
+
+## What you see in the customers list
+
+Each row in the table represents one registered customer and shows the following columns:
+
+| Column | What it contains |
+|---|---|
+| **Customer** | Full name, colour-coded avatar, and unique customer code (e.g. `SHP-1042`) |
+| **Contact** | Email address and phone number |
+| **Branch** | The branch the customer is assigned to, or **None** if unassigned |
+| **Joined** | The date the account was created, plus a relative time label (e.g. "3mo ago") |
+| **Last Activity** | The most recent login date and relative time label |
+| **Balance** | Current wallet balance in USD |
+
+The footer of the table shows exactly how many records match your current filters and which page you are viewing.
+
+---
+
+## Finding a customer
+
+<Steps>
+  <Step title="Open the search bar">
+    Click the **Search by name, email, phone, or code…** field at the top of the page. You can also press <kbd>Ctrl K</kbd> (Windows / Linux) or <kbd>⌘ K</kbd> (Mac) anywhere in the backoffice to open the global search bar, which searches across customers, packages, and invoices simultaneously.
+  </Step>
+  <Step title="Type your query">
+    Start typing the customer's name, email address, phone number, or their customer code. Results update automatically after a short pause — you do not need to press Enter.
+  </Step>
+  <Step title="Narrow down with filters">
+    If more than one result matches, use the **Branch** dropdown to limit results to a specific branch, or adjust the **Sort** dropdown to order by balance or join date so the right account rises to the top.
+  </Step>
+  <Step title="Open the profile">
+    Click the customer's name in the table to open their full profile page. Alternatively, click the three-dot **⋯** menu at the end of their row and choose **Edit Profile** to open the quick-edit modal without leaving the list.
+  </Step>
+</Steps>
+
+<Tip>
+  Every customer has a unique **customer code** (shown in small caps below their name). This code is the fastest way to pull up a specific account — paste the full code into the search bar for an exact, instant match. You can find a customer's code on their welcome email, receipt, or invoice.
+</Tip>
+
+---
+
+## Filtering by branch
+
+Use the **Branch** dropdown (next to the search bar) to restrict the list to customers assigned to a specific branch. Select **All branches** to remove the filter, or **None (Unassigned)** to see customers who have not yet been assigned to any branch.
+
+---
+
+## Sorting the list
+
+Use the **Sort** dropdown to reorder customers. The available options are:
+
+<CardGroup cols={2}>
+  <Card title="By ID" icon="arrow-down-1-9">
+    **Newest First (ID)** — most recently created accounts appear first. This is the default view.
+
+    **Oldest First (ID)** — earliest accounts appear first.
+  </Card>
+  <Card title="By Name" icon="arrow-down-a-z">
+    **Name A → Z** or **Name Z → A** — alphabetical order by first name.
+  </Card>
+  <Card title="By Join Date" icon="calendar">
+    **Recently Joined** — accounts registered most recently.
+
+    **Oldest Joined** — accounts registered longest ago.
+  </Card>
+  <Card title="By Activity" icon="clock">
+    **Recently Active** — customers who logged in most recently.
+
+    **Least Active** — customers who have not logged in for the longest time.
+  </Card>
+  <Card title="By Balance" icon="wallet">
+    **Balance (Highest)** — customers with the most credit appear first.
+
+    **Balance (Lowest)** — customers with the least credit appear first.
+  </Card>
+</CardGroup>
+
+You can also click any **column header** directly in the table to sort by that column. Click the same header again to reverse the order. An arrow indicator shows the active sort direction.
+
+To remove all active filters and return to the default view, click **Reset** beside the filter controls.
+
+---
+
+## Registering a new customer
+
+<Steps>
+  <Step title="Click Add customer">
+    Select the **+ Add customer** button in the top-right corner of the page. The **Add New Customer** modal opens.
+  </Step>
+  <Step title="Enter the customer ID">
+    Type a unique **Customer ID** in the first field. This becomes part of the customer's permanent account number, so choose it carefully — it cannot be changed after saving.
+  </Step>
+  <Step title="Fill in the customer's details">
+    Complete the remaining fields:
+
+    - **First Name** (required) and **Last Name**
+    - **Email Address** (required) — used for login and all notifications
+    - **Phone Number**
+    - **Branch** — assign the customer to a branch using the dropdown, or leave it blank for no assignment
+  </Step>
+  <Step title="Save the record">
+    Click **Save Customer**. The modal closes and the new account appears in the list immediately. The customer will receive a welcome email with their login credentials.
+  </Step>
+</Steps>
+
+<Note>
+  If you need to register a large number of customers at once, use the **Upload** button beside **Add customer**. This opens the Smart Customer Upload panel, which accepts a spreadsheet file and maps columns to the required fields before importing.
+</Note>
+
+---
+
+## Editing or deleting a customer from the list
+
+Click the **⋯** three-dot menu at the far right of any customer row to access two quick actions:
+
+- **Edit Profile** — opens a pre-filled modal where you can update the customer's name, email, phone, and branch without navigating away from the list.
+- **Delete** — permanently removes the customer record after a confirmation prompt.
+
+<Warning>
+  Deleting a customer is a destructive action. All associated packages, invoices, and transaction history remain in the database for record-keeping, but the customer account itself cannot be recovered. Only proceed if you are certain the account should be removed.
+</Warning>

@@ -1,0 +1,242 @@
+---
+title: "Running Operations & Customer Reports in Shiipp"
+sidebarTitle: "Operations Reports"
+description: "How to use Shipment Volume, Warehouse Inventory, Delivery Performance, New Signups, and Top Shippers reports to manage daily logistics and customer activity."
+---
+
+The Logistics & Operations and Customer Insights report groups give you a ground-level view of how packages move through your network and how your customer base is growing. Use these reports to spot bottlenecks at the warehouse, measure delivery speed, identify your most active shippers, and track new customer registrations over time.
+
+<Tabs>
+  <Tab title="Shipment Volume">
+    ## Shipment Volume
+
+    The Shipment Volume report shows how many packages your operation has processed in a given period, broken down by shipping mode. Use it to track workload trends, compare Air versus Sea versus China volumes, and plan staffing accordingly.
+
+    ### What the Report Shows
+
+    | Column / Metric | Description |
+    |---|---|
+    | **Date / Period** | The day, week, or month the row represents |
+    | **Air Packages** | Count of packages shipped via Air freight |
+    | **Sea Packages** | Count of packages shipped via Sea freight |
+    | **China Packages** | Count of packages originating from China routes |
+    | **Total Packages** | Combined count across all modes for the period |
+
+    A **trends chart** above the table plots package counts over time so you can see peaks and troughs at a glance.
+
+    ### Running the Report
+
+    <Steps>
+      <Step title="Open Shipment Volume">
+        Go to **Reports** in the sidebar, then click **Shipment Volume** under the Logistics & Operations group.
+      </Step>
+      <Step title="Set the date range">
+        Use the **Start Date** and **End Date** pickers to define your analysis period. Both the chart and the table update immediately.
+      </Step>
+      <Step title="Read the trends chart">
+        Look for spikes that indicate high-volume periods — these often correspond to sale seasons or shipping cutoffs. Dips may highlight staffing gaps or disruptions.
+      </Step>
+      <Step title="Compare modes">
+        Review the Air, Sea, and China columns side by side to understand which mode dominates. If Sea volumes are growing faster than Air, that may affect warehouse dwell times.
+      </Step>
+      <Step title="Export the data">
+        Click **Export CSV** to download the volume breakdown for sharing with operations managers or for use in external reporting tools.
+      </Step>
+    </Steps>
+
+    <Note>
+      Shipment Volume counts packages logged in the system for the selected period, regardless of current delivery status. A package counted here may still be in transit or at the warehouse.
+    </Note>
+  </Tab>
+
+  <Tab title="Warehouse Inventory">
+    ## Warehouse Inventory
+
+    The Warehouse Inventory report shows every package currently sitting at your US facilities — its status, how long it has been there, and whether it is ready to ship. Use it daily to identify packages that are ageing in the warehouse and take action before customers follow up.
+
+    ### What the Report Shows
+
+    | Column | Description |
+    |---|---|
+    | **Tracking Number** | The package's internal or carrier tracking reference |
+    | **Customer** | Owner of the package |
+    | **Arrival Date** | Date the package was checked into the warehouse |
+    | **Days in Warehouse** | Number of days since arrival |
+    | **Weight** | Package weight in lbs |
+    | **Status** | Current package status (e.g. At Warehouse, Ready to Ship, Awaiting Customs) |
+    | **Ready to Ship** | Flagged indicator showing packages cleared for dispatch |
+
+    ### Understanding Aging
+
+    Packages that have been at the warehouse for an extended period are highlighted so they are easy to spot:
+
+    | Days in Warehouse | Indicator |
+    |---|---|
+    | 0–7 days | Normal — no flag |
+    | 8–14 days | Review recommended |
+    | 15+ days | Action required — contact the customer |
+
+    <Warning>
+      Packages sitting in the warehouse for 15 days or more without a scheduled pickup or delivery instruction should be escalated. Prolonged dwell times increase the risk of damage, loss, and customer complaints.
+    </Warning>
+
+    ### Running the Report
+
+    <Steps>
+      <Step title="Open Warehouse Inventory">
+        Navigate to **Reports → Warehouse Inventory** from the All Reports page.
+      </Step>
+      <Step title="Sort by Days in Warehouse">
+        Click the **Days in Warehouse** column header to sort descending. This surfaces the oldest packages immediately.
+      </Step>
+      <Step title="Filter by status">
+        Use the status filter to focus on **Ready to Ship** packages and confirm they have been dispatched or scheduled for delivery.
+      </Step>
+      <Step title="Act on aged packages">
+        For any package over 14 days, open the customer record by clicking the customer name and send a pickup or delivery reminder.
+      </Step>
+      <Step title="Export the snapshot">
+        Click **Export CSV** to download the current inventory list. This is useful for daily warehouse briefings or supervisor sign-off sheets.
+      </Step>
+    </Steps>
+  </Tab>
+
+  <Tab title="Delivery Performance">
+    ## Delivery Performance
+
+    The Delivery Performance report measures how quickly packages move from your US warehouse to final handover to the customer. Use it to set realistic expectations, identify delays, and hold carriers or processes accountable.
+
+    ### What the Report Shows
+
+    | Metric | Description |
+    |---|---|
+    | **Average Transit Time** | Mean number of days from US Warehouse receipt to customer handover |
+    | **Fastest Delivery** | Shortest transit time recorded in the period |
+    | **Slowest Delivery** | Longest transit time recorded in the period |
+    | **On-Time Rate** | Percentage of packages delivered within your target SLA |
+    | **Packages Measured** | Total count of packages included in the calculation |
+
+    The report may also break down average transit time **by shipping mode** (Air vs. Sea) so you can communicate accurate estimates to customers asking for delivery windows.
+
+    ### Running the Report
+
+    <Steps>
+      <Step title="Open Delivery Performance">
+        Go to **Reports → Delivery Performance** from the All Reports page.
+      </Step>
+      <Step title="Select a date range">
+        Set the **Start Date** and **End Date** to the period you want to evaluate. The metrics refresh automatically.
+      </Step>
+      <Step title="Check the average transit time">
+        Review the **Average Transit Time** figure first. If it is higher than your posted delivery estimate, investigate whether the delay is at the US warehouse, in transit, or at the local delivery stage.
+      </Step>
+      <Step title="Compare Air vs. Sea">
+        If mode-level breakdowns are shown, compare Air and Sea averages. Air should consistently show lower transit times — a narrow gap may signal Air delays worth escalating to your freight partner.
+      </Step>
+      <Step title="Export for reporting">
+        Click **Export CSV** to share performance data with management or use it in service-level review meetings.
+      </Step>
+    </Steps>
+
+    <Tip>
+      Run this report at the end of each month and compare it against the previous month to spot trends. Gradually rising average times are a leading indicator of capacity or process issues before they become customer complaints.
+    </Tip>
+  </Tab>
+
+  <Tab title="New Signups">
+    ## New Signups
+
+    The New Signups report tracks how many new customers registered with Shiipp over any period you choose. Use it to measure the effectiveness of marketing campaigns, spot seasonal registration patterns, and forecast support workload from onboarding new accounts.
+
+    ### What the Report Shows
+
+    | Column / Metric | Description |
+    |---|---|
+    | **Date / Period** | The day, week, or month the row represents |
+    | **New Registrations** | Count of customers who completed registration in this period |
+    | **Cumulative Total** | Running total of all customers registered up to this date |
+
+    A **trends chart** above the table plots registration counts over time, making it easy to see peaks after campaigns or referral pushes.
+
+    ### Running the Report
+
+    <Steps>
+      <Step title="Open New Signups">
+        Navigate to **Reports → New Signups** under the Customer Insights group on the All Reports page.
+      </Step>
+      <Step title="Set the date range">
+        Use the **Start Date** and **End Date** pickers to define the registration window you want to review.
+      </Step>
+      <Step title="Read the chart">
+        Look for spikes that align with promotions, referral campaigns, or social media activity. Flat or declining periods are a signal to re-engage your marketing team.
+      </Step>
+      <Step title="Review totals">
+        Check the **Cumulative Total** to understand overall customer base growth over longer periods (e.g. year-to-date).
+      </Step>
+      <Step title="Export the data">
+        Click **Export CSV** to download the registration counts for use in marketing reports or management dashboards.
+      </Step>
+    </Steps>
+
+    <Note>
+      This report counts completed registrations only. Customers who started the signup process but did not finish are not included.
+    </Note>
+  </Tab>
+
+  <Tab title="Top Shippers">
+    ## Top Shippers (Packages by Customer)
+
+    The Top Shippers report — labelled **Packages by Customer** inside the report — ranks every active customer by their shipping activity. Use it to identify your highest-value accounts, reward loyal customers, and flag accounts with unusually high or low activity.
+
+    ### What the Report Shows
+
+    | Column | Description |
+    |---|---|
+    | **Customer** | Customer full name, account code, and email address |
+    | **Total Pkgs** | All packages logged for this customer in the selected period |
+    | **Active / Transit** | Packages currently in transit or being processed |
+    | **Ready** | Packages at the warehouse cleared for pickup or delivery |
+    | **Delivered** | Packages successfully handed over to the customer |
+    | **Total Weight** | Combined weight (lbs) of all packages for this customer |
+
+    The **summary ribbon** at the top of the page shows three aggregate figures for the entire filtered dataset:
+
+    - **Active Customers** — number of customers with at least one package in the period
+    - **Packages Processed** — total package count across all customers
+    - **Total Volume** — combined weight in lbs across all packages
+
+    ### Sorting and Filtering
+
+    <Steps>
+      <Step title="Open Top Shippers">
+        Navigate to **Reports → Top Shippers** (labelled **customer** in the URL) from the All Reports page.
+      </Step>
+      <Step title="Set the date range">
+        The report defaults to the current calendar month. Adjust the **Start Date** and **End Date** fields to change the analysis window. Results update automatically after a short debounce.
+      </Step>
+      <Step title="Search for a specific customer">
+        Type a customer name or account code into the **Search** field on the right side of the filter bar. The table filters in real time as you type.
+      </Step>
+      <Step title="Sort by the metric you care about">
+        Click any column header to sort the table by that metric. Click the same header again to reverse the sort order. The active sort column is highlighted with a directional arrow.
+        - Sort by **Total Pkgs** to rank customers by volume.
+        - Sort by **Total Weight** to rank by freight mass.
+        - Sort by **Ready** to find customers with packages waiting for collection.
+      </Step>
+      <Step title="Open a customer record">
+        Click any customer name in the table to open their full customer profile in a new tab, where you can view their package history, invoices, and contact details.
+      </Step>
+      <Step title="Export the list">
+        Click **Export CSV** to download the ranked customer list. All active filters and the current sort order are preserved in the export.
+      </Step>
+    </Steps>
+
+    <Accordion title="What does the Ready count highlight mean?">
+      Customers with a non-zero **Ready** count are shown with a red badge on that number. This makes it easy to spot accounts that have packages sitting at the warehouse awaiting collection or delivery instruction — scroll through the table and act on any highlighted rows before the packages age further.
+    </Accordion>
+
+    <Tip>
+      Use this report at the end of each month to identify your top 10 customers by package volume or weight. Consider reaching out to acknowledge their loyalty or offer volume-based incentives to retain their business.
+    </Tip>
+  </Tab>
+</Tabs>

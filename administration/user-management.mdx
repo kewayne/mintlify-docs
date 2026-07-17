@@ -1,0 +1,145 @@
+---
+title: "Manage Staff Accounts, Roles, and Permissions"
+sidebarTitle: "User Management"
+description: "Add and deactivate staff accounts, assign roles and branch access, and manage individual permission overrides for your courier team."
+---
+
+The User Management page is where you control who can log in to the Shiipp backoffice and what they can do once they are in. Each staff member has a **role** that grants a baseline set of permissions, a **branch assignment** that scopes their access to a specific location, and optional **permission overrides** that let you grant or revoke individual capabilities beyond what their role provides.
+
+To open User Management, click **Settings** in the left sidebar, then click **User Management**.
+
+---
+
+## View all staff members
+
+The staff table lists every account in the system. Each row shows:
+
+- **Team Member** — Name and email address.
+- **Role & Branch** — The staff member's role badge and their assigned branch (or *Global / No Branch* if they have system-wide access).
+- **Activity** — The date and time of their last successful login.
+- **Permissions** — The number of individual permission overrides on their account, with a quick link to manage them.
+- **Status** — An active/inactive toggle.
+
+Use the **Search** field to find a staff member by name or email. Use the **All roles** dropdown to filter by role, and the **All branches** dropdown to filter by branch. Click **Reset** to clear all filters.
+
+---
+
+## Add a new staff member
+
+<Steps>
+  <Step title="Click Add User">
+    Click the **Add User** button in the top-right corner of the page.
+  </Step>
+
+  <Step title="Fill in the user's details">
+    Complete the fields in the left panel of the dialog:
+
+    | Field | Required | Description |
+    |---|---|---|
+    | **First Name** | Yes | Staff member's given name. |
+    | **Last Name** | Yes | Staff member's family name. |
+    | **Email Address** | Yes | The email they will use to log in. Must be unique. |
+    | **Password** | Yes | Initial login password. The staff member can change it after logging in. |
+    | **Role** | No | Determines the baseline set of permissions. Defaults to *Staff*. |
+    | **Branch Assignment** | No | The branch this user is scoped to. Leave as *Global / No Branch* for admin-level staff who need access across all locations. |
+    | **Account is Active** | No | Tick to allow the user to log in immediately. Untick to create the account in an inactive state. |
+  </Step>
+
+  <Step title="Save the user">
+    Click **Save User**. The account is created and the staff member can log in using the email and password you entered.
+  </Step>
+
+  <Step title="Configure permission overrides (optional)">
+    After saving, the right panel of the dialog activates showing the **User Permissions** panel. You can now grant, revoke, or reset individual permissions for this user. See [Manage permission overrides](#manage-permission-overrides) below.
+  </Step>
+</Steps>
+
+### Available roles
+
+| Role | Typical use |
+|---|---|
+| **Admin** | Full system access. Reserved for system administrators. |
+| **Manager** | Branch-level management, reporting, and staff oversight. |
+| **Cashier** | Processing payments and handling invoice transactions. |
+| **Agent** | Front-line customer service and package intake. |
+| **Staff** | General backoffice tasks. The default role for new accounts. |
+
+---
+
+## Edit a staff member's role or branch
+
+Click the staff member's name in the table, or hover over their row and click the **pencil icon**. The edit dialog opens pre-filled with their current details. Update the **Role** or **Branch Assignment** fields as needed and click **Save User**.
+
+---
+
+## Deactivate or reactivate a staff account
+
+<Warning>
+  Deactivating an account takes effect immediately. The staff member's active session is terminated and they will be unable to log in until the account is reactivated. Any work in progress that has not been saved will be lost.
+</Warning>
+
+You can deactivate a staff account in two ways:
+
+- **Using the status toggle in the table** — Click the toggle switch in the **Status** column directly in the staff list. The change takes effect instantly with no confirmation dialog.
+- **Using the edit dialog** — Open the staff member's edit dialog, untick **Account is Active**, and click **Save User**.
+
+To reactivate an account, flip the toggle back to active or tick **Account is Active** in the edit dialog.
+
+---
+
+## Manage permission overrides
+
+Every staff member inherits a set of permissions from their role. You can override individual permissions for a specific user — granting access beyond their role, or revoking access that their role normally provides — without changing the role itself.
+
+<Steps>
+  <Step title="Open the user's edit dialog">
+    Click the staff member's name or the pencil icon in the table. For an existing user, the **User Permissions** panel loads automatically on the right.
+  </Step>
+
+  <Step title="Find the permission to override">
+    Use the **Search permissions** field to filter by permission key or description. Each row in the permissions table shows:
+    - **Permission** — The permission key and its description.
+    - **Role Access** — Whether the user's role already grants this permission (*Granted by Role* or *Not in Role*).
+    - **Override** — A dropdown to control this user's individual access.
+  </Step>
+
+  <Step title="Set the override state">
+    For each permission you want to adjust, select one of the three override options:
+
+    | Option | Effect |
+    |---|---|
+    | **Default** | No override — the user follows their role's permissions. |
+    | **Grant** | Explicitly grants this permission, even if the role does not include it. |
+    | **Revoke** | Explicitly removes this permission, even if the role includes it. |
+  </Step>
+
+  <Step title="Save the permissions">
+    Click **Save Permissions** in the User Permissions panel header. A confirmation confirms the changes were saved.
+  </Step>
+</Steps>
+
+<Note>
+  Permission overrides are separate from the main user record. You can save the user's profile details and permission overrides independently — use the **Save User** button for profile changes and the **Save Permissions** button for permission changes.
+</Note>
+
+---
+
+## Assign branch-specific access
+
+A staff member's **Branch Assignment** controls which branch's data and operations they can see and interact with. Branch-assigned users only see packages, customers, and reports for their assigned branch. Users set to **Global / No Branch** can access data across all branches.
+
+To reassign a staff member to a different branch, open their edit dialog, change the **Branch Assignment** dropdown, and click **Save User**.
+
+<Info>
+  For role-level permission configuration — such as controlling which permissions are available to all Cashiers or all Managers — see [User Roles](/concepts/user-roles). User Management handles individual account overrides; role definitions control system-wide access rules.
+</Info>
+
+---
+
+## Delete a staff account
+
+Hover over a staff row in the table and click the **trash icon**. A confirmation dialog asks you to confirm permanent deletion. Deleting an account removes all associated session data and permission overrides. This action cannot be undone.
+
+<Warning>
+  Prefer deactivating an account over deleting it if there is any chance the staff member will return or if their activity history is needed for auditing purposes. Deactivation preserves all records while preventing login.
+</Warning>

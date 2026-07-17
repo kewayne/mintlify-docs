@@ -1,0 +1,132 @@
+---
+title: "Viewing and Managing Customer Invoices and Billing"
+sidebarTitle: "Invoices"
+description: "View, search, and manage all customer invoices — track outstanding balances, record payments, adjust fees, and download billing documents."
+---
+
+The Invoices page gives you a complete picture of billing across all customers. Every invoice the system has ever generated — paid, unpaid, partially paid, or cancelled — is listed here with its current payment status and outstanding balance. Use this page for daily billing oversight, to look up a specific customer's invoice history, to adjust fees, or to print a copy for a customer on request.
+
+---
+
+## The Stats Header
+
+Three summary cards at the top of the page update automatically based on any filters you apply:
+
+| Stat | What It Shows |
+|---|---|
+| **Total Billed** | The combined face value of all invoices in the current view |
+| **Total Collected** | Payments already received against those invoices |
+| **Total Outstanding** | The remaining balance still owed (Total Billed minus Total Collected) |
+
+These figures reflect only the invoices visible after your current search and filter settings are applied — they are not always system-wide totals.
+
+---
+
+## The Invoice List
+
+Each row in the table represents one invoice. The columns show:
+
+| Column | Description |
+|---|---|
+| **Invoice Info** | Invoice number and creation date, plus the number of packages attached |
+| **Customer** | Customer's full name and their account code |
+| **Amount / Balance** | Total invoice amount, with a "Due" indicator showing the remaining balance if unpaid, or a green "Settled" note if fully paid |
+| **Status** | Current payment status badge |
+
+Click any row to open the invoice detail page for that record.
+
+---
+
+## Invoice Status Meanings
+
+| Status | Meaning |
+|---|---|
+| **Paid** | The full invoice amount has been collected. No balance remains. |
+| **Unpaid** | No payment has been received. The full amount is outstanding. |
+| **Partial** | A partial payment has been made. A balance is still owed. |
+| **Draft** | The invoice has been created but not yet finalised or issued to the customer. |
+| **Cancelled** | The invoice has been voided and is no longer collectible. |
+
+---
+
+## Searching and Filtering Invoices
+
+Use the toolbar above the table to narrow the list:
+
+- **Search bar** — Type an invoice number, customer name, or email address. Results update as you type (with a short debounce delay).
+- **Status filter** — Select a status from the dropdown to show only invoices in that state.
+- **Date range** — Set a start and end date to show invoices created within that period.
+- **Reset** — Click the **Reset** button to clear all filters and return to the full invoice list.
+
+---
+
+## Generating an Invoice
+
+<Steps>
+  <Step title="Click Create Invoice">
+    Click the **Create Invoice** button in the top-right of the toolbar. You will be taken to the invoice creation form.
+  </Step>
+  <Step title="Select the customer">
+    Search for and select the customer you are billing. Their account details and wallet balance will load automatically.
+  </Step>
+  <Step title="Attach packages">
+    Add the packages being billed on this invoice. Each package contributes its freight and customs charges to the invoice total.
+  </Step>
+  <Step title="Review and adjust fees">
+    On the invoice detail page, you can set or adjust the **Delivery Fee**, **Handling Fee**, **Discount**, **Late Fee**, and **Other Charges** using the editable fields in the Billing Summary panel. Changes save automatically.
+  </Step>
+  <Step title="Confirm the grand total">
+    The Billing Summary panel shows a live breakdown: Total Freight, Total Customs, all fees and adjustments, and the final **Grand Total** and **Balance Due**.
+  </Step>
+</Steps>
+
+---
+
+## Viewing an Invoice Detail
+
+Click any invoice row from the list to open its detail page. The detail page is divided into two areas:
+
+<CardGroup cols={2}>
+  <Card title="Left Column" icon="list">
+    Shows the customer's name, email, phone, and wallet balance; the table of attached packages with editable cost fields (declared value, freight, customs); and the full payment history for the invoice.
+  </Card>
+  <Card title="Right Column — Billing Summary" icon="receipt">
+    Shows a live financial breakdown: freight total, customs total, all adjustable fees, and the grand total. The **Balance Due** at the bottom updates in real time as you edit any fee field.
+  </Card>
+</CardGroup>
+
+### Editing Fees on an Invoice
+
+In the **Billing Summary** panel, click into any fee field to change the value. The totals recalculate automatically and save when you move out of the field. Click **More Fees** to reveal the Late Fee and Other Charges fields if needed.
+
+### Removing a Package from an Invoice
+
+<Warning>
+  Removing a package from an invoice is immediate and cannot be undone from the backoffice. The package is detached from the invoice and the billing total recalculates instantly. Only remove a package if you are certain it should not be billed on this invoice.
+</Warning>
+
+In the **Attached Packages** table, click the trash icon on the right side of any package row. Confirm the prompt. The package is removed and the invoice total recalculates immediately.
+
+---
+
+## Collecting a Payment Against an Invoice
+
+To record a payment directly from the invoice detail page:
+
+1. Click **Pay Now** in the header actions area (visible only when a balance remains).
+2. You will be redirected to the **Point of Sale** screen with this customer pre-loaded.
+3. The invoice will appear in the unpaid list. Select it, add a payment method, and complete the transaction as normal.
+
+<Note>
+  All payments — whether collected through the POS, recorded manually, or processed online — are listed in the **Payments** section at the bottom of the invoice detail page, showing the date, method, reference, and amount applied for each entry.
+</Note>
+
+---
+
+## Printing an Invoice
+
+From the invoice detail page, click **Print** in the top-right header. The printable invoice opens in a new browser tab. Use your browser's print function or the print button on the page to send it to your printer.
+
+<Tip>
+  If a customer needs a copy of their receipt (not the full invoice), use the **Print Receipt** function from the POS success screen instead. Receipts are formatted for 80mm thermal printers and include a QR code.
+</Tip>

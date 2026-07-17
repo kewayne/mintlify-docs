@@ -1,0 +1,152 @@
+---
+title: "Broadcast History: Review and Manage Past Campaigns"
+sidebarTitle: "Broadcast History"
+description: "View delivery stats, open rates, and per-recipient logs for every sent, scheduled, and draft campaign, and take action on campaigns that haven't fired yet."
+---
+
+The Broadcast History page gives you a complete record of every campaign your team has created — whether it has already been sent, is scheduled for a future time, or is still sitting in draft. From here you can inspect delivery performance, drill into individual recipient logs, and manage campaigns that have not gone out yet.
+
+To open Broadcast History, go to **Marketing → Broadcast** and click **View History** in the top-right corner, or navigate directly via **Marketing → Broadcast History** in the sidebar.
+
+---
+
+## The Campaign List
+
+When you first open Broadcast History you see a table of all campaigns, with the most recent at the top.
+
+| Column | What it shows |
+|---|---|
+| **Campaign Name** | The message subject (or "Untitled Broadcast" if none was set), the channel icon, and the staff member who created it |
+| **Channel** | `email`, `whatsapp`, or `push` |
+| **Audience** | Number of recipients and the segment or filter used to select them |
+| **Performance** | For email campaigns: a progress bar and percentage showing the open rate. For WhatsApp and push: "Tracking N/A" (delivery tracking is not available for those channels) |
+| **Sent Date** | The date and time the broadcast was dispatched or is scheduled for |
+| **Actions** | A chevron button to open the full Campaign Report |
+
+Click anywhere on a row to open the Campaign Report for that broadcast.
+
+---
+
+## Campaign Statuses
+
+<Accordion title="Sent">
+  The broadcast was dispatched and all messages were queued for delivery. The sent date is recorded and the recipient log is available for review. Open-rate tracking is live for email campaigns.
+</Accordion>
+
+<Accordion title="Scheduled">
+  The broadcast has been set to go out at a future date and time. It has not yet been sent. You can cancel a scheduled broadcast before it fires — see [Cancelling a Scheduled Broadcast](#cancelling-a-scheduled-broadcast) below.
+</Accordion>
+
+<Accordion title="Draft">
+  The broadcast was saved but never submitted for sending or scheduling. No messages have been sent to any recipients. You can load the draft back into the composer to finish and send it, or delete it if it is no longer needed.
+</Accordion>
+
+<Accordion title="Failed / Skipped (per recipient)">
+  Within a sent campaign's recipient log, individual entries may show a **Failed** or **Skipped** status. Failed means the message could not be delivered to that address or device. Skipped typically means the recipient was excluded — for example, because they had opted out of marketing emails.
+</Accordion>
+
+---
+
+## Viewing a Campaign Report
+
+Click any row in the campaign list to open the Campaign Report. The report contains three sections:
+
+### Summary Stats
+
+Three metric cards across the top of the report show:
+
+- **Total Recipients** — the number of customers the broadcast was addressed to.
+- **Open Rate** — the percentage of recipients who opened the email, with the raw opened count shown alongside. *(Email only.)*
+- **Delivery Rate** — the percentage of messages that were successfully delivered, with the failed count highlighted.
+
+<Note>
+  Open rate and delivery rate are only available for **email** campaigns. WhatsApp and push notification channels do not provide read or delivery receipts through this system.
+</Note>
+
+### Message Content
+
+Below the stats cards is a collapsible **Message Content** section. Click the header to expand it and see a rendered preview of exactly what recipients received, including any HTML formatting and personalisation variables as they were resolved at send time.
+
+### Recipient Log
+
+The **Recipient Log** table lists every customer who was included in the broadcast. Use the search box to filter by name or email address.
+
+| Column | What it shows |
+|---|---|
+| **Customer** | Name and email address (or phone number for WhatsApp/push) |
+| **Status** | Delivery status for that individual — see the status definitions below |
+| **Sent At** | How long ago the message was dispatched to this recipient |
+| **Opened At** | For email: when the recipient first opened the message. Blank if not yet opened. |
+
+<Tip>
+  Use the recipient search to quickly check whether a specific customer received a broadcast — useful when a customer contacts you to say they didn't get a message.
+</Tip>
+
+---
+
+## Navigating Between Views
+
+- To go back to the campaign list from a report, click **← Back to List** in the top-left corner.
+- To start a new campaign from the history page, click **+ New Campaign** in the top-right corner.
+- The page URL updates when you open a report (e.g. `?id=42`). You can share or bookmark that URL to go directly to a specific report.
+
+---
+
+## Cancelling a Scheduled Broadcast
+
+If a broadcast has **Scheduled** status and has not yet fired, you can cancel it before the send time.
+
+<Steps>
+  <Step title="Locate the scheduled campaign">
+    Find the campaign in the list. Scheduled campaigns show a future date in the **Sent Date** column.
+  </Step>
+  <Step title="Open the Campaign Report">
+    Click the row to open the report.
+  </Step>
+  <Step title="Cancel the schedule">
+    Click **Cancel Schedule** in the report header. Confirm the action when prompted. The campaign status changes to **Draft** so you can edit and reschedule it if needed, or delete it entirely.
+  </Step>
+</Steps>
+
+<Warning>
+  Cancellation is only possible before the scheduled send time. If the clock has already passed the scheduled time, the broadcast may already be in the delivery queue and cannot be recalled.
+</Warning>
+
+---
+
+## Deleting a Draft
+
+<Steps>
+  <Step title="Open the Campaign Report for the draft">
+    Click the draft row in the campaign list.
+  </Step>
+  <Step title="Click Delete Draft">
+    Click the **Delete Draft** button in the report header. Confirm the deletion when prompted.
+  </Step>
+</Steps>
+
+<Note>
+  Only **Draft** campaigns can be deleted from this page. Sent and scheduled campaigns are retained for your records and cannot be deleted.
+</Note>
+
+---
+
+## Duplicating a Past Broadcast
+
+Duplicating a sent or draft campaign copies its channel, subject, and body content into the composer as a new draft — useful for recurring announcements or when you want to re-use a previous message as a starting point.
+
+<Steps>
+  <Step title="Open the Campaign Report">
+    Click the campaign you want to re-use.
+  </Step>
+  <Step title="Click Duplicate">
+    Click **Duplicate** in the report header. The system creates a new draft pre-filled with the original campaign's channel, subject, and message content.
+  </Step>
+  <Step title="Edit and send the duplicate">
+    You are taken to the Campaign Manager composer with the duplicate loaded. Adjust the subject, body, and audience as needed, then send or schedule the new campaign.
+  </Step>
+</Steps>
+
+<Tip>
+  Duplicate a high-performing campaign (one with a strong open rate) as the basis for your next send. Reuse the subject line format and tweak only the body content to maintain consistency.
+</Tip>

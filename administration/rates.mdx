@@ -1,0 +1,145 @@
+---
+title: "Manage Shipping Rate Tables and Pricing Tiers"
+sidebarTitle: "Rates"
+description: "Create and manage shipping rate tables, define weight-based pricing tiers, import bulk CSV rates, and control which rate table is used for live shipment calculations."
+---
+
+Rate tables define how much customers are charged for shipping based on the weight of their package. Each table contains a list of weight tiers — each tier pairing a specific weight in pounds with the corresponding customer price. You can maintain multiple rate tables simultaneously (for example, separate tables for different service levels or seasonal adjustments), but only one table is **active** at any given time. The active table drives all new shipping charge calculations.
+
+To open Rate Tables, go to **Settings** in the left sidebar, then click **Rates**.
+
+---
+
+## The rates workspace
+
+The page is split into two columns:
+
+- **Left column — Available Tables**: Lists all your rate tables. A green **Active** badge marks the currently live table. Click any table name to load its pricing tiers on the right.
+- **Right column — Rates Editor**: Shows the weight tiers for the selected table and lets you add, edit, import, or delete individual tiers.
+
+---
+
+## Create a new rate table
+
+<Steps>
+  <Step title="Click New Rate Table">
+    Click the **New Rate Table** button in the top-right corner of the page.
+  </Step>
+
+  <Step title="Name the table">
+    Enter a descriptive name that identifies the table's purpose or time period (e.g., *Standard Air Freight 2026* or *Promotional Summer Rates*). Click **Save Table**.
+  </Step>
+
+  <Step title="Select the table to add pricing tiers">
+    The new table appears in the left column. Click it to open the empty rates editor on the right.
+  </Step>
+</Steps>
+
+---
+
+## Add pricing tiers to a table
+
+Once you have selected a rate table, add individual weight-to-price mappings one at a time using the tier form.
+
+<Steps>
+  <Step title="Click Add Tier">
+    With a table selected, click **Add Tier** in the rates editor header.
+  </Step>
+
+  <Step title="Enter the weight and price">
+    - **Weight (lbs)** — The weight value for this tier. Enter a decimal value (e.g., `1.0`, `2.5`, `10.0`).
+    - **Price ($)** — The customer-facing price in US dollars for this weight (e.g., `5.50`).
+  </Step>
+
+  <Step title="Save the tier">
+    Click **Save Tier**. The new row appears in the pricing table, sorted by weight.
+  </Step>
+
+  <Step title="Repeat for all weight brackets">
+    Add one tier for each weight point in your pricing schedule. For example, if you charge by every pound from 1 lb to 150 lbs, you would add 150 tiers.
+  </Step>
+</Steps>
+
+<Tip>
+  For large pricing schedules, use the **Import CSV** feature below to upload all tiers at once instead of entering them manually.
+</Tip>
+
+---
+
+## Import a bulk rate table from CSV
+
+If you have a pricing schedule in a spreadsheet, you can import it directly as a CSV file. Importing replaces all existing tiers in the selected table.
+
+<Warning>
+  Uploading a CSV file **permanently replaces all current tiers** in the selected rate table. This action cannot be undone. Make sure your CSV data is correct before importing, and consider exporting or noting your existing rates first.
+</Warning>
+
+<Steps>
+  <Step title="Select the target table">
+    Click the rate table you want to populate in the left column.
+  </Step>
+
+  <Step title="Click Import CSV">
+    Click **Import CSV** in the rates editor header.
+  </Step>
+
+  <Step title="Prepare your CSV file">
+    Your file must have exactly two columns with no header row:
+
+    ```
+    Weight (lbs), Customer Price ($)
+    1.0, 5.50
+    2.0, 9.00
+    3.0, 12.50
+    ```
+
+    The system also accepts `.xls` and `.xlsx` files in the same two-column format.
+  </Step>
+
+  <Step title="Upload the file">
+    Click **Choose File**, select your CSV from your computer, then click **Upload & Replace**. The new tiers appear in the editor when the upload is complete.
+  </Step>
+</Steps>
+
+---
+
+## Set a rate table as active
+
+Only one rate table is active at a time. The active table is used for all new package weight calculations immediately upon activation.
+
+<Steps>
+  <Step title="Select the table you want to activate">
+    Click the table name in the left column.
+  </Step>
+
+  <Step title="Click Set as Active">
+    Click the **Set as Active** button in the rates editor header. This button is only visible on inactive tables.
+  </Step>
+
+  <Step title="Confirm the activation">
+    A confirmation dialog appears reminding you that this will immediately affect shipping calculations. Click **Yes, Set Active** to proceed.
+  </Step>
+</Steps>
+
+<Warning>
+  Activating a new rate table takes effect immediately for all new packages processed from that moment forward. Packages already created and invoiced are not retroactively repriced, but any new package scanned or created after the activation will use the new rates.
+</Warning>
+
+---
+
+## Edit or delete a tier
+
+To edit an existing tier, hover over the row in the rates editor and click the **pencil icon**. To remove a tier, click the **trash icon** and confirm in the dialog. You can edit or delete tiers in any table, including the active one.
+
+---
+
+## Active vs. inactive tables
+
+| Status | Behavior |
+|---|---|
+| **Active** | Used for all new shipment pricing. Marked with a green **Active** badge and **System Default** label in the editor header. Cannot be deleted while active. |
+| **Inactive** | Stored for reference or future use. Not used in any pricing calculation. Can be deleted. |
+
+<Info>
+  There is always exactly one active table. Activating a different table automatically deactivates the previous one.
+</Info>

@@ -1,0 +1,108 @@
+---
+title: "Managing Customer Pre-Alerts in the Backoffice"
+sidebarTitle: "Pre-Alerts"
+description: "Review, search, approve, and manage pre-alert declarations that customers submit before their packages arrive at your facility."
+---
+
+A pre-alert is a heads-up that a customer sends to your team before a package physically arrives at the warehouse. When a customer places an online order, they submit the vendor name, carrier, tracking number, and a brief description of what they bought. This gives you advance knowledge of incoming freight so you can match packages to accounts the moment they arrive on the dock — no guessing, no unmatched parcels sitting in a corner.
+
+The Pre-Alerts page in the backoffice is where you view, filter, edit, and action those declarations. Customers with a status of **Pending** are waiting for their package to arrive and be linked to their account. Once a package is scanned in and matched, the status moves to **Received**.
+
+## The pre-alerts list
+
+Every pre-alert submitted by any customer appears in the main table. The table loads 50 records per page. The columns are:
+
+| Column | Description |
+|---|---|
+| Tracking | The carrier tracking number the customer provided, shown in monospace. The carrier abbreviation (UPS, FedEx, etc.) appears below it. |
+| Description | The vendor store name and the customer's description of the item. Both fields are inline-editable — click either one to update it without opening the full form. |
+| Customer | Full name and account code of the customer who submitted the alert. |
+| Value | The declared customs value in USD. Click to edit inline. |
+| Invoice | A paperclip button if no invoice is attached, or a file icon to view the uploaded invoice. Click the paperclip to attach a file directly from the list. |
+| Status | A badge showing either **Pending** (amber) or **Received** (green). |
+| Created | The date and time the customer submitted the pre-alert. |
+
+## Searching and filtering
+
+Use the search bar and status filter at the top of the table to narrow the list.
+
+<CardGroup cols={2}>
+  <Card title="Search" icon="magnifying-glass">
+    Type any part of the tracking number, customer name, description, or vendor name. Results update as you type.
+  </Card>
+  <Card title="Status filter" icon="funnel">
+    Choose **Pending Arrival** to see only unmatched pre-alerts, or **Linked to Package** to see only those already received. Select **All Statuses** to clear the filter.
+  </Card>
+</CardGroup>
+
+Click **Reset** to clear both the search text and the status filter at once and return to the full list.
+
+## Pre-alert statuses
+
+<CardGroup cols={2}>
+  <Card title="Pending" icon="clock">
+    The customer submitted the alert but the physical package has not yet been scanned into your system. Most pre-alerts start here.
+  </Card>
+  <Card title="Received" icon="check-circle">
+    The package has arrived and been linked to this pre-alert record. The customer's account is updated automatically.
+  </Card>
+</CardGroup>
+
+<Info>
+The system auto-detects the carrier from the tracking number format when a pre-alert is created or edited. You can override this at any time using the carrier dropdown in the edit form.
+</Info>
+
+## Adding a pre-alert on behalf of a customer
+
+Staff can create a pre-alert directly from the backoffice — for example, if a customer calls in their shipment details instead of submitting them online.
+
+<Steps>
+  <Step title="Open the Add Pre-Alert form">
+    Click the **Add Pre-Alert** button in the top-right of the page header. The modal form opens.
+  </Step>
+  <Step title="Search for the customer">
+    Type at least two characters of the customer's name, email address, or account ID in the **Customer** field. A dropdown of matching accounts appears. Click the correct name to select it.
+  </Step>
+  <Step title="Enter the tracking number">
+    Paste or type the carrier tracking number. After a short pause, the system attempts to auto-detect the carrier. If it finds a match, the carrier logo and name populate the **Courier** field automatically. You can also select the carrier manually from the dropdown.
+  </Step>
+  <Step title="Fill in the item details">
+    Enter the item **Description** (required) and the **Vendor / Store** name. Add the **Declared Value** in USD — this is used for customs calculations.
+  </Step>
+  <Step title="Attach an invoice (optional)">
+    Click **Choose File** under **Invoice Attachment** to upload a PDF, JPG, or PNG. This is useful for high-value items or when customs documentation is needed upfront.
+  </Step>
+  <Step title="Save the pre-alert">
+    Click **Save Pre-Alert**. The new record appears at the top of the list with a **Pending** status. The customer will see it reflected in their own account portal.
+  </Step>
+</Steps>
+
+## Editing an existing pre-alert
+
+You have two ways to update a pre-alert:
+
+**Inline editing** — click directly on the vendor name, item description, or declared value cell in the table row. An input field appears in place. Press **Enter** to save or **Escape** to cancel. Changes are saved instantly without opening the full form.
+
+**Full form editing** — hover over the row and click the **pencil icon** that appears on the right side. The same Add/Edit modal opens, pre-filled with the current values. Useful when you need to change the customer, tracking number, carrier, or invoice file.
+
+## Attaching an invoice after submission
+
+If a pre-alert was saved without an invoice and you need to add one later, hover over the row and click the **plus-circle icon** in the Invoice column. A file picker opens immediately — select your file and it uploads and links to that record automatically.
+
+## Bulk deletion
+
+<Steps>
+  <Step title="Select records">
+    Check the boxes on the left side of each row you want to remove. To select all visible records at once, check the box in the table header.
+  </Step>
+  <Step title="Choose the bulk action">
+    The bulk action bar appears at the top of the table. Open the **Choose action** dropdown and select **Delete Selected**.
+  </Step>
+  <Step title="Apply the action">
+    Click **Apply Action** and confirm the deletion prompt. The selected records are permanently removed.
+  </Step>
+</Steps>
+
+<Warning>
+Deleting a pre-alert is permanent. It cannot be restored. If you are unsure, consider leaving the record in place — it does not affect operations once the package has been received.
+</Warning>

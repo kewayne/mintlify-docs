@@ -1,0 +1,148 @@
+---
+title: "Processing In-Person Payments at the Point of Sale"
+sidebarTitle: "Point of Sale"
+description: "Use the POS screen to find customers, collect payment for outstanding invoices across all methods, and release packages — all from a single screen."
+---
+
+The Point of Sale (POS) screen is your primary tool for face-to-face transactions. From here you can find a customer, see all of their outstanding invoices and paid packages, collect payment using any accepted method, and immediately release their packages — without leaving the screen. Every action is tied to a customer session, so you always know exactly who you're serving and what they owe.
+
+## Opening the POS
+
+Navigate to **Point of Sale** in the sidebar. The screen opens in a blank "Ready for Transaction" state until you load a customer. No data is displayed until you search for someone — this keeps the workspace clean between sessions.
+
+---
+
+## Finding a Customer
+
+<Steps>
+  <Step title="Open the customer search">
+    Click **Find Customer** in the top-right corner of the page. A search modal slides open and the cursor jumps to the search field automatically.
+  </Step>
+  <Step title="Type the customer's name, email, or account number">
+    Enter at least two characters. Results appear as you type. Use the **↑ / ↓** arrow keys to move through the list, then press **Enter** to select — or simply click the name.
+  </Step>
+  <Step title="Confirm the customer is loaded">
+    The modal closes and the customer's stats panel, unpaid invoices, and paid packages all appear. The button label changes to **Switch Customer** for the rest of the session.
+  </Step>
+</Steps>
+
+<Tip>
+  You can also open the POS pre-loaded with a specific customer by clicking **Pay Now** from their invoice detail page. The POS screen will load with that customer already selected.
+</Tip>
+
+---
+
+## Reading the Customer Stats Panel
+
+Once a customer is loaded, four stat cards appear at the top of the workspace:
+
+<CardGroup cols={4}>
+  <Card title="Customer Profile" icon="user">
+    Shows the customer's full name and their mailbox/account address code (e.g. SHP-0042). Click the name to open their full customer profile in a new tab.
+  </Card>
+  <Card title="Amount Due" icon="warning-circle">
+    The total outstanding balance across all unpaid invoices. Displayed in red. Also shows the count of unpaid invoices.
+  </Card>
+  <Card title="Ready to Release" icon="check-circle">
+    The number of invoices that have already been paid and whose packages are ready for pickup right now.
+  </Card>
+  <Card title="Wallet Funds" icon="wallet">
+    The customer's current wallet (account credit) balance. This amount can be applied toward payment during checkout.
+  </Card>
+</CardGroup>
+
+---
+
+## Selecting Invoices to Process
+
+The main panel is split into two sections:
+
+- **Payment Required** — invoices with an outstanding balance, shown with a red "Unpaid" badge.
+- **Ready for Release (Paid)** — invoices that are fully paid and whose packages are waiting to be handed over.
+
+Click any invoice row to **select** it for this session. A selected invoice is highlighted with a checkbox. Click it again to deselect.
+
+To see which packages are attached to an invoice, click **View Packages** inside the row. Each package shows its tracking number, weight, description, and current status.
+
+The **Transaction Summary** panel on the right updates in real time as you select invoices:
+
+| Field | Description |
+|---|---|
+| Selected Invoices | Number of invoices currently in your session |
+| Packages to Release | Total packages that will be released on completion |
+| Subtotal | Combined value of selected invoices |
+| Already Paid | Any amount already collected on selected invoices |
+| **Total Due** | The net amount still owed — this is what you collect |
+
+---
+
+## Processing a Payment
+
+<Steps>
+  <Step title="Select invoices and review the Total Due">
+    Tick one or more invoices from the list. Confirm the **Total Due** shown in the Transaction Summary panel on the right.
+  </Step>
+  <Step title="Click Proceed to Payment">
+    The payment modal opens. It shows a live **Balance Remaining** counter that counts down to $0.00 as you add payment entries. If all selected invoices are already paid, the button reads **Confirm Release** instead — skip to Step 5.
+  </Step>
+  <Step title="Add one or more payment methods">
+    Click the payment method button that matches what the customer is tendering. Each click adds a line to the **Tendered Items** list on the right side of the modal.
+
+    <Tabs>
+      <Tab title="Cash">
+        Click **Cash**. A line is added with the full remaining balance pre-filled. Adjust the amount if the customer is paying part in cash. If the customer tenders more than the balance, the **Change Due** counter appears in blue — hand back that amount.
+      </Tab>
+      <Tab title="Card">
+        Click **Card** to record a card or point-of-sale terminal payment. Enter the exact amount charged on the terminal.
+      </Tab>
+      <Tab title="Wallet">
+        Click **Wallet** to apply the customer's stored account credit. The system automatically caps the wallet amount at the lower of the remaining balance or the available wallet balance, so you cannot over-apply credit.
+      </Tab>
+      <Tab title="Bank Transfer">
+        Click **Bank** for wire transfers or direct deposits. Enter the transferred amount.
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step title="Confirm the balance is fully covered">
+    The status box reads **Fully Covered** (green) when the total tendered equals the amount due. The **Complete Transaction** button activates. If there is change, decide whether to return it as cash or credit it to the customer's wallet by checking the **Add change to customer wallet** checkbox — then confirm with the customer by ticking **Customer Confirmed**.
+  </Step>
+  <Step title="Collect customer signature (optional)">
+    Click **Request Signature** to push a signature prompt to the customer-facing display screen. Once signed, a thumbnail preview appears. If no display screen is available, click **Skip**.
+  </Step>
+  <Step title="Choose whether to release packages now">
+    The **Release packages to customer now** checkbox is ticked by default. Uncheck it if the customer is paying today but will collect their packages at a later date.
+  </Step>
+  <Step title="Click Complete Transaction">
+    The payment is processed. A success screen displays the receipt ID, transaction reference, total collected, and any change given. Click **Print Receipt** to open the thermal receipt in a new tab, which will print automatically.
+  </Step>
+  <Step title="Start the next customer">
+    Click **Next Customer** to clear the session and reopen the search modal, ready for the next transaction.
+  </Step>
+</Steps>
+
+<Tip>
+  When a customer pays with their wallet balance, the system will never apply more credit than is available — the wallet line auto-adjusts. This means you can click **Wallet** first and then add a second method (such as cash) for any remaining amount, and the wallet entry will automatically reduce to avoid over-payment.
+</Tip>
+
+---
+
+## Clearing a Session
+
+<Warning>
+  Clicking **Clear Session** removes the current customer and empties the entire cart. Any payment entries you have already added in the payment modal are discarded. This action cannot be undone. Only clear the session if you need to cancel the transaction entirely or serve a different customer mid-way.
+</Warning>
+
+To clear the session, click the red **Clear Session** button in the top-right corner. A confirmation dialog will ask you to confirm before anything is removed. Click **Keep Editing** to go back, or **Yes, Clear It** to proceed.
+
+---
+
+## Receipt Reference
+
+After every successful transaction the system issues a **Receipt ID** (e.g. `RCP-00123`). This ID links to a printable thermal receipt that shows:
+
+- Company name and address
+- Date, time, and cashier name
+- Invoice numbers and package descriptions
+- Payment method(s) and amounts tendered
+- Change given
+- A QR code encoding the receipt ID for future lookup

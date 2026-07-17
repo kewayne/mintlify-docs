@@ -1,0 +1,127 @@
+---
+title: "User Roles and Permissions in the Shiipp Backoffice"
+sidebarTitle: "User Roles"
+description: "A complete breakdown of the five staff roles in Shiipp — Admin, Manager, Staff, Cashier, and Agent — including what each role can access and how to manage roles."
+---
+
+The Shiipp backoffice uses a role-based access control system to ensure that each team member can only see and do what their position requires. Every staff account is assigned one of five roles, and that role determines which sidebar items are visible, which actions are available, and which API endpoints can be called. On top of the role-level defaults, administrators can grant or revoke individual permissions per user using the Security Management tools.
+
+## The Five Roles
+
+<CardGroup cols={2}>
+  <Card title="Admin" icon="shield-check">
+    Full access to every feature, setting, and sensitive operation in the backoffice. Admins manage all other users and configure the system.
+  </Card>
+  <Card title="Manager" icon="briefcase">
+    Operational management access. Managers can handle day-to-day courier operations and financial reporting but typically do not have access to low-level system configuration.
+  </Card>
+  <Card title="Staff" icon="user">
+    The default role for front-line team members. Staff can process packages, check off arrivals, and serve customers at the Point of Sale.
+  </Card>
+  <Card title="Cashier" icon="cash-register">
+    Focused on financial operations — primarily the Point of Sale and transaction records.
+  </Card>
+  <Card title="Agent" icon="headset">
+    Customer-facing support agents. Agents typically handle pre-alerts and customer account queries.
+  </Card>
+</CardGroup>
+
+## Role Capabilities Comparison
+
+The table below maps each sidebar permission to the roles that hold it by default. Administrators can adjust any of these via the Role Access Matrix in Security Management.
+
+| Feature / Permission | Admin | Manager | Staff | Cashier | Agent |
+|---|:---:|:---:|:---:|:---:|:---:|
+| **Overview** | | | | | |
+| Dashboard (`dashboard:view`) | ✅ | ✅ | ✅ | ✅ | ✅ |
+| **Management** | | | | | |
+| Shipments (`shipments:view`) | ✅ | ✅ | ✅ | — | — |
+| Customers (`customers:view`) | ✅ | ✅ | ✅ | — | ✅ |
+| Packages (`packages:view`) | ✅ | ✅ | ✅ | — | ✅ |
+| Check-Off (`packages:view`) | ✅ | ✅ | ✅ | — | — |
+| Pre Alerts (`prealerts:view`) | ✅ | ✅ | ✅ | — | ✅ |
+| Backroom | ✅ | ✅ | ✅ | — | — |
+| Deliveries | ✅ | ✅ | ✅ | — | — |
+| **Financial** | | | | | |
+| Point of Sale (`pos:view`) | ✅ | ✅ | ✅ | ✅ | — |
+| Transactions (`transactions:view`) | ✅ | ✅ | — | ✅ | — |
+| Day-End Report (`pos:view`) | ✅ | ✅ | — | ✅ | — |
+| Invoices (`invoices:manage`) | ✅ | ✅ | — | — | — |
+| **Marketing** | | | | | |
+| Broadcast (`broadcast:view`) | ✅ | ✅ | — | — | — |
+| **Administration** | | | | | |
+| System Settings (`settings:view`) | ✅ | — | — | — | — |
+| System Updates (`admin`) | ✅ | — | — | — | — |
+
+<Note>
+  The table above reflects the default permission structure defined in the sidebar configuration. Your organisation may have customised role permissions — check with your administrator or review the Role Access Matrix in **Settings → Security Management** for the exact current state.
+</Note>
+
+## How the Permission System Works
+
+The backoffice uses a two-layer permission model:
+
+<Tabs>
+  <Tab title="Role-level permissions">
+    Every role has a set of permissions assigned to it. When a staff member logs in, the system loads the permissions associated with their role and shows only the sidebar items and features they are allowed to use. These role-level permissions are managed in the **Role Access Matrix** under Security Management.
+  </Tab>
+  <Tab title="User-level overrides">
+    On top of role permissions, administrators can grant or revoke specific permissions for an individual user without changing their role. For example, a specific staff member might be granted access to Invoices even though the Staff role does not include it by default. These overrides appear in the **Staff Overrides** table in Security Management and in the user's profile in User Management.
+  </Tab>
+</Tabs>
+
+## How Roles Affect What You See
+
+When a staff member does not have the required permission for a menu item, that item is simply not shown in their sidebar. There is no visible locked or greyed-out entry — the menu is clean and shows only what is relevant to that user's role.
+
+For example:
+- A **Cashier** logging in sees Dashboard, Point of Sale, Transactions, and Day-End Report — nothing else.
+- An **Agent** sees Dashboard, Customers, Packages, and Pre Alerts.
+- An **Admin** sees every section including System Settings and System Updates.
+
+## Managing Roles and Users
+
+Only administrators can create, edit, and deactivate staff accounts or change role assignments.
+
+<Steps>
+  <Step title="Navigate to User Management">
+    Go to **Settings → User Management**. The page lists all staff members with their role, branch assignment, last login time, and account status.
+  </Step>
+  <Step title="Add or edit a user">
+    Click **Add User** to create a new account, or click a user's name to open the edit panel. Fill in the first name, last name, email, and password fields, then select the appropriate role from the dropdown: **Staff**, **Admin**, **Manager**, **Cashier**, or **Agent**.
+  </Step>
+  <Step title="Assign a branch (optional)">
+    If your organisation operates multiple branches, use the **Branch Assignment** dropdown to tie the user to a specific branch. Leave it as **Global / No Branch** for users who work across all locations.
+  </Step>
+  <Step title="Set account status">
+    Use the **Account is Active** checkbox to enable or disable the account. Inactive accounts cannot log in. You can also toggle status directly from the user list using the switch in the Status column.
+  </Step>
+  <Step title="Manage individual permissions">
+    After saving the user, the right-hand panel shows the full Permission Catalog. For each permission, set the override to **Grant**, **Revoke**, or **Default** (which inherits the role-level setting). Click **Save Permissions** when done.
+  </Step>
+</Steps>
+
+<Warning>
+  Deleting a user is permanent and cannot be undone. If a staff member leaves your organisation, it is safer to deactivate their account by toggling the status switch rather than deleting the record entirely.
+</Warning>
+
+## Managing Role Permissions
+
+To change which permissions a role holds across all users of that role:
+
+1. Go to **Settings → Security Management**.
+2. In the **Role Access Matrix** panel, locate the permission row and check or uncheck the box under the relevant role column. Changes take effect immediately — the label "Live updates" confirms this.
+3. Use the **Permission Catalog** panel on the left to search for a specific permission key if the list is long.
+
+<Tip>
+  You can use the search field at the top of the Security Management page to filter the permission catalog and matrix by keyword. This makes it easy to find a specific permission such as `invoices:manage` or `broadcast:view` without scrolling through the full list.
+</Tip>
+
+## Staff Overrides vs. Role Permissions
+
+| | Role Permission | Staff Override |
+|---|---|---|
+| **Scope** | Affects all users with that role | Affects a single user only |
+| **Set in** | Security Management → Role Access Matrix | Security Management → Staff Overrides *or* User Management → user profile |
+| **Options** | Enabled / Disabled per permission | Grant / Revoke / Default |
+| **Use case** | Change access for an entire role category | Grant a one-off exception or restrict a specific individual |

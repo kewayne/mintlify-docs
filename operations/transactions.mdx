@@ -1,0 +1,117 @@
+---
+title: "Reviewing the Transaction Summary and Payment Ledger"
+sidebarTitle: "Transactions"
+description: "Search, filter, and analyse every payment processed in the system — with gross amounts, processing fees, net revenue, and per-method breakdowns."
+---
+
+The Transaction Summary page is the financial ledger of the backoffice. It lists every payment event recorded in the system — cash collected at the counter, card charges, wallet deductions, and bank transfers — alongside the gross amount, any associated processing fees, and the resulting net revenue. Use this page to investigate a specific payment, reconcile totals for a date range, or review which methods customers are using most.
+
+---
+
+## Revenue Summary Totals
+
+Four summary cards run across the top of the page and update whenever you change the date range or search filters:
+
+<CardGroup cols={4}>
+  <Card title="Gross Volume" icon="chart-line-up">
+    The total value of all transactions in the current view, plus a transaction count shown in smaller text beside the amount.
+  </Card>
+  <Card title="Processing Fees" icon="receipt">
+    The total fees deducted across all displayed transactions (e.g. card processing charges).
+  </Card>
+  <Card title="Net Revenue" icon="money">
+    Gross Volume minus Processing Fees. This is the actual amount retained after costs.
+  </Card>
+  <Card title="Revenue by Method" icon="credit-card">
+    A live breakdown listing each payment method and its total contribution to revenue for the current filter period.
+  </Card>
+</CardGroup>
+
+---
+
+## The Transaction List
+
+Each row in the table represents one payment record. The columns are:
+
+| Column | Description |
+|---|---|
+| **Date & Trx ID** | The date and time of the transaction, and the unique transaction or group reference ID |
+| **Customer** | The customer's full name and account code |
+| **Method & Agent** | The payment method used (e.g. Cash, Card, Wallet, Bank Transfer) and the name of the agent who processed it |
+| **Gross** | The total amount charged or collected |
+| **Fees** | Any processing fee deducted (shown in red if non-zero) |
+| **Net** | The amount after fees are subtracted (shown in green for positive, red for negative) |
+| **Status** | The current state of the transaction |
+
+### Transaction Statuses
+
+| Status | Meaning |
+|---|---|
+| **Completed** | The transaction was processed successfully and funds were collected. |
+| **Pending** | The transaction has been initiated but is not yet confirmed. |
+| **Failed** | The transaction was attempted but did not complete successfully. |
+| **Refunded** | The transaction was reversed and the amount was returned to the customer. |
+
+---
+
+## Applying Date Range Filters
+
+<Steps>
+  <Step title="Set the start date">
+    Click the **Start Date** field in the filter bar and choose the beginning of the period you want to view. The page defaults to today's date on first load.
+  </Step>
+  <Step title="Set the end date">
+    Click the **End Date** field and choose the end of the period. You can set both fields to the same date to view a single day.
+  </Step>
+  <Step title="Apply the filter">
+    Click the **Apply** button, or simply change either date — the list refreshes automatically after a short delay.
+  </Step>
+</Steps>
+
+<Note>
+  The date filter applies to the transaction creation date and time. Transactions processed just before midnight will appear on the earlier date, not the following day.
+</Note>
+
+---
+
+## Searching Transactions
+
+Use the **Search** bar on the right side of the filter panel to look up a specific transaction. You can search by:
+
+- **Transaction ID or group reference** — paste the ID shown on a receipt or in another report
+- **Customer name** — enter part of the first or last name
+- **Reference number** — the reference field recorded at the time of payment (e.g. a card terminal reference)
+
+The list narrows as you type. Clear the field to remove the search and return to the full filtered results.
+
+---
+
+## Exporting Transaction Data
+
+<Note>
+  Transaction export is currently available by contacting your system administrator, who can run a date-range export directly from the database. A self-serve CSV export button may appear in future updates to the backoffice.
+</Note>
+
+For immediate data needs, you can select a date range and use your browser's print function (**File → Print → Save as PDF**) to save a formatted copy of the visible transaction list for reporting purposes.
+
+---
+
+## Voiding a Transaction
+
+<Warning>
+  Voiding a transaction is irreversible. Once a transaction is voided, the payment record is marked as reversed in the system and the associated invoice balance is reinstated. You cannot undo this action. Only void a transaction if you are certain the payment was recorded in error or a confirmed refund has been issued.
+</Warning>
+
+If you need to void a transaction, contact a system administrator. Voiding requires elevated permissions and must be accompanied by a reason for audit purposes. The following situations may justify a void:
+
+- A cash payment was entered for the wrong customer or the wrong amount
+- A card payment was duplicated due to a terminal error
+- A confirmed refund has been issued and the payment record must be reversed
+
+After a void, the transaction status changes to **Refunded**, the customer's invoice balance is restored, and the gross, fees, and net totals in the summary cards adjust accordingly.
+
+---
+
+## Navigating Large Result Sets
+
+The table displays up to 50 transactions per page. Use the **Previous** and **Next** buttons at the bottom of the table to move between pages. The pagination bar shows the current range (e.g. "Showing 1 to 50 of 312 transactions") so you always know where you are in the full result set.

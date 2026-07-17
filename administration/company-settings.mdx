@@ -1,0 +1,114 @@
+---
+title: "Configure Company Details and Branding"
+sidebarTitle: "Company Settings"
+description: "Update your company's legal information, contact details, and customer-facing branding including logos, colors, and favicon across the Shiipp portal."
+---
+
+Your company settings control the information that appears on customer invoices, receipts, the tracking portal, and all outbound communications. Changes you save here take effect immediately across the entire platform, so it's a good idea to review them carefully before saving. The settings are split into two areas: **Company** (legal and contact information) and **Customization** (visual branding).
+
+## Navigate to Company Settings
+
+To open company settings, go to **Settings** in the left sidebar, then select **Company** or **Customization** from the settings menu.
+
+---
+
+## Company Information
+
+The Company section stores your organization's legal identity. This data is pulled into every invoice, receipt, and customer-facing document that Shiipp generates.
+
+<Note>
+  Your **Company Name** appears on every invoice, receipt, and notification email sent to customers. Make sure it matches the trading name registered with your payment processors.
+</Note>
+
+<Steps>
+  <Step title="Open Company Settings">
+    In the left sidebar, click **Settings**, then click **Company**.
+  </Step>
+
+  <Step title="Fill in your company details">
+    Complete each field in the form:
+
+    | Field | Description |
+    |---|---|
+    | **Company Name** | Your legal or trading name. Appears on all invoices and receipts. |
+    | **Business Registration Number** | Your government-issued registration number (e.g., TRN, company number). Used for compliance documents. |
+    | **Email Address** | The primary business email shown on invoices and support correspondence. |
+    | **Phone Number** | A customer-facing contact number printed on receipts. |
+    | **Address** | Your head-office address printed on formal documents. |
+  </Step>
+
+  <Step title="Upload your company logo">
+    Click **Upload New** next to the logo field. Select a PNG, SVG, or WEBP file. The recommended maximum file size is 5 MB. A preview appears immediately after upload.
+
+    <Tip>
+      Use a transparent-background PNG or SVG for the best appearance on invoices and the tracking portal. Avoid JPEG files for logos because they do not support transparency.
+    </Tip>
+  </Step>
+
+  <Step title="Save your changes">
+    Click **Save Changes** at the top of the page. A green confirmation appears on the button when your changes are stored successfully.
+  </Step>
+</Steps>
+
+---
+
+## App Customization
+
+The Customization section controls the visual identity of the customer-facing tracking portal and the backoffice dashboard. Settings are organized into groups — **Branding**, **Company**, and any additional configuration groups your installation includes. Use the left-hand group navigation to switch between them.
+
+<CardGroup cols={2}>
+  <Card title="Branding Settings" icon="palette">
+    Set your primary color, accent color, logo, and favicon. These values theme the entire customer portal.
+  </Card>
+  <Card title="Company Settings" icon="buildings">
+    Configure company name, URLs, and any additional text-based fields surfaced in the portal header and footer.
+  </Card>
+</CardGroup>
+
+### Update your brand colors
+
+<Steps>
+  <Step title="Open App Customization">
+    In the sidebar, click **Settings**, then click **Customization**.
+  </Step>
+
+  <Step title="Select the Branding group">
+    Click **Branding** in the left-hand configuration group list.
+  </Step>
+
+  <Step title="Set your primary and accent colors">
+    Each color field shows a color swatch and a hex-code text input. You can:
+    - Click the swatch to open a color picker.
+    - Type a hex value directly into the text box (e.g., `#1a56db`).
+
+    The **primary color** is used for buttons, active links, and key UI elements. The **accent color** is used for highlights and secondary actions.
+  </Step>
+
+  <Step title="Upload logo and favicon">
+    Switch to the relevant setting field, then click **Upload New**. Accepted formats are PNG, SVG, and WEBP up to 5 MB.
+
+    - **Logo** — displayed in the portal header and on emailed documents.
+    - **Favicon** — the small icon shown in browser tabs. Use a square image, ideally 32×32 px or 64×64 px.
+  </Step>
+
+  <Step title="Save all settings">
+    Click **Save Changes**. All groups are saved together in a single request.
+  </Step>
+</Steps>
+
+<Info>
+  Color changes and logo updates are reflected on the customer tracking portal within a few seconds of saving. Customers may need to refresh their browser to see the new favicon.
+</Info>
+
+---
+
+## How Settings Affect Customer Documents
+
+| Setting | Where it appears |
+|---|---|
+| Company Name | Invoice header, receipt footer, email subject lines |
+| Logo | Invoice header, tracking portal navbar, email header |
+| Primary Color | Portal buttons, links, status badges |
+| Address | Invoice and receipt footer |
+| Phone & Email | Invoice contact block, receipt footer |
+| Favicon | Browser tab for the tracking portal |

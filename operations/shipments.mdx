@@ -1,0 +1,123 @@
+---
+title: "Shipment Manifests: Creating and Managing Freight"
+sidebarTitle: "Shipments"
+description: "Group packages into air, sea, or China freight manifests, track shipment progress from preparation to customs clearance, and manage package assignments."
+---
+
+A shipment manifest is the container that groups individual customer packages together into a single freight movement — whether that's an air cargo pallet, a sea container, or a China freight consignment. Every package that travels with your courier service belongs to exactly one manifest. The Shipment Manifests page gives you a complete list of all active and historical shipments, with tools to search, filter, drill into a specific manifest, and create new ones.
+
+Think of this page as your freight ledger: it tells you what is leaving, what has arrived, and what is currently in transit, organised by manifest ID and Air Waybill (AWB) number.
+
+## The shipments list
+
+The main table shows one row per shipment manifest. Each row displays:
+
+| Column | Description |
+|---|---|
+| Type icon | A coloured icon showing the freight mode — airplane (Air), boat (Sea), or globe (China) |
+| Manifest | The internal manifest ID and, below it, the AWB number in a monospace badge |
+| Flight Date | The scheduled departure or sailing date |
+| Packages | The total number of packages currently assigned to this manifest |
+| Status | A coloured badge indicating where the shipment is in its lifecycle |
+
+Click the **arrow icon** on the right of any row, or click the manifest ID itself, to open the shipment detail view.
+
+## Shipment statuses
+
+| Status | Meaning |
+|---|---|
+| **Preparing** | The manifest has been created and packages are still being added or verified. The shipment has not departed yet. |
+| **In Transit** | The freight has left your origin facility and is en route to the destination country. |
+| **Arrived** | The cargo has landed or docked at the destination port or airport and is awaiting customs processing. |
+| **Cleared** | Customs clearance is complete. Packages are ready to be received into the warehouse and distributed to customers. |
+
+## Searching and filtering
+
+<CardGroup cols={2}>
+  <Card title="Search by ID or AWB" icon="magnifying-glass">
+    Type any part of the manifest ID or AWB number in the search bar. Results filter as you type, with a 300 ms debounce to keep the interface smooth.
+  </Card>
+  <Card title="Filter by type" icon="airplane">
+    Open the **All types** dropdown and select **Air Freight**, **Sea Freight**, or **China Freight** to restrict the list to a single freight mode.
+  </Card>
+  <Card title="Filter by status" icon="funnel">
+    Open the **All statuses** dropdown and select any status to see only shipments at that stage of the lifecycle.
+  </Card>
+  <Card title="Filter by date range" icon="calendar">
+    Use the **from** and **to** date pickers to restrict results to manifests with a flight date within that range.
+  </Card>
+</CardGroup>
+
+Click **Reset** to clear all filters and return to the complete list.
+
+## Creating a new shipment manifest
+
+<Steps>
+  <Step title="Click New Shipment">
+    Select the **New Shipment** button in the top-right of the page. The shipment creation form opens.
+  </Step>
+  <Step title="Choose the freight type">
+    Select **Air Freight**, **Sea Freight**, or **China Freight** from the type selector. This controls how the manifest is classified and which icon appears in the list.
+  </Step>
+  <Step title="Enter the AWB number">
+    Type the Air Waybill or Bill of Lading number provided by your freight forwarder. This is the primary reference number used to track the consignment externally.
+  </Step>
+  <Step title="Set the flight or sailing date">
+    Pick the scheduled departure date using the date picker. This date is used for sorting and filtering in the list.
+  </Step>
+  <Step title="Save the manifest">
+    Click **Save**. The new manifest appears in the list with a **Preparing** status and zero packages. You can now open it and begin adding packages.
+  </Step>
+</Steps>
+
+<Tip>
+Create the manifest as early as possible — ideally as soon as you have a confirmed AWB from your freight partner. That way, staff can start scanning packages into the manifest immediately as they are processed in the warehouse.
+</Tip>
+
+## Viewing shipment details
+
+Click on any manifest row to open the full detail view. The detail page shows:
+
+- **Manifest header** — manifest ID, type icon, flight date, AWB number, total weight in pounds, and package count.
+- **Status badge** — click it to update the shipment status as the freight progresses through the pipeline.
+- **Packages table** — every package assigned to this manifest, with columns for tracking number, description, customer, weight, declared value, customs invoice, duty rate, package status, and invoice amount.
+
+### Adding packages to a manifest
+
+In the **Scan or enter tracking** field at the top of the packages table, type or scan a local tracking number and press **Enter** (or click **Add to Ship**). The system looks up the package and adds it to the manifest immediately. The package count and total weight in the header update automatically.
+
+### Removing packages from a manifest
+
+Hover over any package row and click the **arrow icon** to open the full package record, or use the bulk action bar to remove multiple packages at once.
+
+<Steps>
+  <Step title="Select packages to remove">
+    Check the boxes next to the packages you want to remove. Use the header checkbox to select all visible packages at once.
+  </Step>
+  <Step title="Open the bulk action menu">
+    The bulk action bar appears at the top of the table. Open the action dropdown and select **Remove from Manifest**.
+  </Step>
+  <Step title="Confirm the removal">
+    Confirm the prompt. The selected packages are removed from this manifest but remain in the system — they can be added to another manifest later.
+  </Step>
+</Steps>
+
+### Updating package statuses in bulk
+
+Use the same bulk action bar to move multiple packages to **Ready for Pickup** or **In Transit** in one operation — useful when an entire manifest clears customs and all packages need to be updated simultaneously.
+
+### Inline editing on the detail view
+
+Click directly on a package's **weight**, **declared value**, **vendor name**, or **description** cell to edit it in place. Press **Enter** to save or **Escape** to cancel. This is faster than opening the full package edit form for minor corrections.
+
+## Generating invoices
+
+On the shipment detail page, click **Generate Invoices** to open the invoice wizard. This creates or regenerates customer invoices for all packages in the manifest that do not already have one, calculating duties and fees automatically based on each package's declared value and assigned tariff rate.
+
+## Broadcasting a shipment update
+
+Click **Broadcast** on the shipment detail page to send a push notification or email to all customers who have packages in this manifest. Use this to notify customers when a shipment status changes — for example, when the freight arrives or clears customs.
+
+<Warning>
+Broadcasts are sent immediately to all customers with packages in the manifest. Review the message before confirming. There is no undo after a broadcast is sent.
+</Warning>

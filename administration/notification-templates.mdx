@@ -1,0 +1,153 @@
+---
+title: "Edit and Manage Customer Notification Templates"
+sidebarTitle: "Notification Templates"
+description: "Customize the automated email, SMS, WhatsApp, and push notification messages that Shiipp sends to customers at key points in the shipment lifecycle."
+---
+
+Notification templates are the pre-written messages that Shiipp sends to customers automatically when key events occur — for example, when a package is received at the warehouse, when an invoice is generated, or when a shipment is ready for pickup. Each template is tied to a specific **channel** (Email, SMS, WhatsApp, or Push) and a specific **trigger event**. You can customize the text of any template while keeping the delivery logic intact.
+
+To open Notification Templates, click **Settings** in the left sidebar, then click **Notification Templates**.
+
+---
+
+## Template list
+
+The main table lists every notification template in the system. Each row shows:
+
+- **Channel** — The delivery method (Email, SMS, WhatsApp, or Push).
+- **Template Name** — A human-readable name for the event (e.g., *Package Received*, *Invoice Generated*).
+- **Subject / Title** — For email templates, the email subject line; for push templates, the notification title.
+- **Status** — Whether the template is **Active** (sent automatically) or **Inactive** (disabled).
+- **Last Updated** — The date the template content was last saved.
+
+Use the **Search** field to find a template by name, and use the **All Channels** dropdown to filter by channel type.
+
+---
+
+## Edit a notification template
+
+<Steps>
+  <Step title="Find the template">
+    Scroll or search for the template you want to edit. You can filter by channel using the dropdown at the top of the page.
+  </Step>
+
+  <Step title="Open the editor">
+    Click anywhere on the template row to open the full-screen editor. The editor shows the template name and channel slug in the header.
+  </Step>
+
+  <Step title="Edit the subject line (email and push only)">
+    For **Email** and **Push** templates, a **Subject / Title** field appears above the editor. Update the subject line that customers will see in their inbox or on their device.
+
+    SMS and WhatsApp templates do not have a subject — only message body content.
+  </Step>
+
+  <Step title="Edit the message content">
+    Type your message in the dark-background content editor on the left side of the screen. You can use any text, line breaks, and template variables (placeholders).
+
+    For Email templates, a full drag-and-drop email editor loads in place of the text editor, allowing you to build rich HTML emails visually.
+  </Step>
+
+  <Step title="Insert template variables">
+    Click any placeholder button in the **Available Placeholders** toolbox below the editor to insert it at your cursor position. Placeholders are replaced with real customer and shipment data when the notification is sent.
+
+    See [Available template variables](#available-template-variables) below for a full reference.
+  </Step>
+
+  <Step title="Preview the template">
+    The right side of the editor shows a **Live Preview** that updates as you type. The preview renders realistic dummy data in place of placeholders so you can see exactly what the customer will receive. The preview adapts to the channel:
+
+    - **Email** — Shown in a simulated email client frame.
+    - **WhatsApp** — Shown in a mobile phone mockup with a WhatsApp chat interface.
+    - **SMS** — Shown in an iOS Messages mockup.
+    - **Push** — Shown as a lock-screen notification on a phone mockup.
+  </Step>
+
+  <Step title="Enable or disable the template">
+    Use the **Active** toggle in the editor header to control whether this notification is sent automatically. Inactive templates are stored but never sent.
+  </Step>
+
+  <Step title="Save your changes">
+    Click **Save Changes** in the top-right corner of the editor. A confirmation message appears when the save is successful.
+  </Step>
+</Steps>
+
+---
+
+## Restore the default template
+
+If you want to undo your edits and return a template to its original system-provided content, click **Restore default template** (the small link below the content editor). Confirm in the dialog that appears. This overwrites your current content with the built-in default.
+
+<Note>
+  Restoring the default does not automatically save — you must click **Save Changes** after restoring if you want the default to take effect.
+</Note>
+
+---
+
+## Available template variables
+
+Template variables (also called placeholders) are wrapped in double curly braces: `{{variable_name}}`. When Shiipp sends a notification, it replaces each placeholder with the actual data for that customer and shipment.
+
+<Accordion title="Customer variables">
+  | Variable | Replaced with |
+  |---|---|
+  | `{{first_name}}` | Customer's first name |
+  | `{{last_name}}` | Customer's last name |
+  | `{{full_name}}` | Customer's full name |
+  | `{{email}}` | Customer's email address |
+  | `{{phone_number}}` | Customer's phone number |
+</Accordion>
+
+<Accordion title="Shipment and package variables">
+  | Variable | Replaced with |
+  |---|---|
+  | `{{local_tracking_number}}` | Your courier's internal tracking number (e.g., *JM-10928374*) |
+  | `{{shipper_tracking_number}}` | The upstream carrier's tracking number (e.g., Amazon, FedEx) |
+  | `{{carrier_name}}` | The name of the upstream carrier (e.g., *Amazon Logistics*) |
+  | `{{vendor}}` | The merchant or vendor the package was ordered from (e.g., *Amazon*) |
+  | `{{weight_lbs}}` | Package weight in pounds |
+  | `{{description}}` | Package contents description |
+</Accordion>
+
+<Accordion title="Address variables">
+  | Variable | Replaced with |
+  |---|---|
+  | `{{address_line1}}` | Street address (used for warehouse or delivery address context) |
+  | `{{city}}` | City name |
+  | `{{state}}` | State or province |
+  | `{{zip_code}}` | Postal or ZIP code |
+</Accordion>
+
+<Accordion title="Invoice and payment variables">
+  | Variable | Replaced with |
+  |---|---|
+  | `{{amount}}` | Invoice total (e.g., *$45.50*) |
+  | `{{invoice_number}}` | Invoice reference number (e.g., *INV-2026-901*) |
+</Accordion>
+
+<Accordion title="Pickup and location variables">
+  | Variable | Replaced with |
+  |---|---|
+  | `{{pickup_location}}` | The branch name where the customer is collecting their package |
+</Accordion>
+
+<Accordion title="Branding variables">
+  | Variable | Replaced with |
+  |---|---|
+  | `{{app_name}}` | Your company/app name as configured in Company Settings |
+  | `{{logo_url}}` | URL to your company logo for use in email templates |
+</Accordion>
+
+<Tip>
+  If the preview shows a placeholder still in `{{double curly braces}}` highlighted in yellow, that variable is not recognized or has no dummy data available. Double-check the spelling — placeholder names are case-sensitive.
+</Tip>
+
+---
+
+## WhatsApp formatting tips
+
+WhatsApp templates support basic text formatting using standard WhatsApp markdown:
+
+- Wrap text in `*asterisks*` to make it **bold** (e.g., `*Your package has arrived!*`).
+- Use line breaks to separate paragraphs.
+
+HTML tags are not rendered in WhatsApp or SMS templates.

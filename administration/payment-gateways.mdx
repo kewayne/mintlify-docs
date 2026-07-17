@@ -1,0 +1,147 @@
+---
+title: "Configure Payment Gateways and Credentials"
+sidebarTitle: "Payment Gateways"
+description: "Connect Stripe, WiPay, and Fygaro payment accounts, manage merchant credentials, set transaction fee structures, and control which gateway is active."
+---
+
+The Payment Gateways page is where you connect your merchant accounts to Shiipp so customers can pay their invoices online. Three gateways are supported: **Stripe**, **WiPay**, and **Fygaro**. You can configure multiple accounts per gateway (for example, separate accounts for different currencies or environments), but only one account per gateway can be the **Active Primary** at a time — that is the account that processes live transactions.
+
+To open Payment Gateways, click **Settings** in the left sidebar, then click **Payment Gateways**.
+
+<Warning>
+  Never share your secret keys or API keys with anyone. Store them only in the fields provided here. If a key is compromised, revoke it immediately in your gateway's dashboard and generate a new one before updating it here.
+</Warning>
+
+<Note>
+  Each gateway supports **Test Mode (Sandbox)** and **Live Production** environments. Always use test-mode credentials during setup and QA. Switch to live credentials only when you are ready to accept real customer payments.
+</Note>
+
+---
+
+## Gateway overview
+
+<Tabs>
+  <Tab title="Stripe">
+
+    ## Stripe
+
+    Stripe is a global payment processor supporting USD, JMD, TTD, and many other currencies. It is suitable for card payments and is widely used for e-commerce and courier invoicing.
+
+    ### Where to find your Stripe credentials
+
+    1. Log in to your [Stripe Dashboard](https://dashboard.stripe.com).
+    2. Go to **Developers → API Keys**.
+    3. Copy the **Publishable key** and the **Secret key** for the environment you want (test or live).
+    4. For webhooks, go to **Developers → Webhooks**, create an endpoint pointing to your Shiipp installation, and copy the **Signing secret**.
+
+    ### Fields to fill in
+
+    | Field | Description |
+    |---|---|
+    | **Connection Name** | A friendly label for this account (e.g., *Stripe USD Live*). |
+    | **Publishable Key** | Starts with `pk_test_` (test) or `pk_live_` (live). Safe to expose to browsers. |
+    | **Secret Key** | Starts with `sk_test_` (test) or `sk_live_` (live). Keep this private. |
+    | **Webhook Signing Secret** | Starts with `whsec_`. Used to verify incoming webhook events. |
+    | **Currency** | Select `USD`, `JMD`, or `TTD` depending on the currency for this account. |
+    | **Mode** | Select **Test Mode (Sandbox)** or **Live Production**. |
+
+    ### Enable Stripe as your primary transaction route
+
+    Tick **Primary Transaction Route** in the connection form before saving. Only one Stripe account can be primary at a time — activating a new one automatically deactivates the previous primary.
+
+  </Tab>
+  <Tab title="WiPay">
+
+    ## WiPay
+
+    WiPay is a Caribbean-based payment gateway supporting local currencies including JMD (Jamaican Dollar) and TTD (Trinidad and Tobago Dollar). It is the preferred gateway for customers paying in local currency.
+
+    ### Where to find your WiPay credentials
+
+    Contact your WiPay account manager or log in to the [WiPay merchant portal](https://wipayfinancial.com) to obtain your account number and API key. WiPay provides these credentials when your merchant account is approved.
+
+    ### Fields to fill in
+
+    | Field | Description |
+    |---|---|
+    | **Connection Name** | A friendly label (e.g., *WiPay JMD Live*). |
+    | **Account Number** | Your WiPay merchant account number. |
+    | **WiPay API Key** | Your private API key from the WiPay portal. Keep this private. |
+    | **Fee Structure** | Choose how transaction fees are handled (see below). |
+    | **Country Code** | Two-letter country code, e.g., `JM` for Jamaica or `TT` for Trinidad. |
+    | **Default Currency** | Currency code, e.g., `JMD` or `TTD`. |
+    | **Mode** | Select **Test Mode (Sandbox)** or **Live Production**. |
+
+    ### Transaction fee structure
+
+    WiPay charges a transaction fee on each payment. You decide who absorbs that cost:
+
+    | Option | What it means |
+    |---|---|
+    | **Customer Pays Fee** | The fee is added on top of the invoice amount. The customer sees and pays the full total including the fee. |
+    | **Merchant Absorbs Fee** | The fee is deducted from the amount your business receives. The customer pays only the invoice amount. |
+
+    <Tip>
+      Most couriers using WiPay in Jamaica choose **Customer Pays Fee** to maintain consistent net revenue per shipment.
+    </Tip>
+
+  </Tab>
+  <Tab title="Fygaro">
+
+    ## Fygaro
+
+    Fygaro is a payment link-based gateway suitable for markets where Fygaro payment buttons are common. It uses a button URL and key-based authentication rather than direct API integration.
+
+    ### Where to find your Fygaro credentials
+
+    Log in to your Fygaro merchant account and navigate to your API or integration settings to retrieve the Button Base URL, KID, and Secret Key. Contact Fygaro support if you cannot locate these.
+
+    ### Fields to fill in
+
+    | Field | Description |
+    |---|---|
+    | **Button Base URL** | The base URL provided by Fygaro for generating payment buttons (e.g., `https://app.fygaro.com/pay/...`). |
+    | **Fygaro KID** | Your unique Key ID used for request signing. |
+    | **Fygaro Secret Key** | Your private secret used to authenticate requests. Keep this private. |
+    | **Currency** | Currency code for this account (e.g., `JMD`). |
+
+    ### Enable Fygaro
+
+    Tick **Primary Transaction Route** in the connection form to make this Fygaro configuration the active one. Unlike Stripe and WiPay, Fygaro does not support multiple simultaneously configured environments, so the enabled/disabled toggle effectively turns Fygaro on or off for the platform.
+
+  </Tab>
+</Tabs>
+
+---
+
+## Add or update a gateway configuration
+
+<Steps>
+  <Step title="Select the gateway tab">
+    Click **Stripe**, **WiPay**, or **Fygaro** in the provider tab bar at the top of the page.
+  </Step>
+
+  <Step title="Fill in the configuration form">
+    Complete the fields in the **Connect Account** panel on the right side of the screen. See the gateway-specific field tables above for details on each field.
+  </Step>
+
+  <Step title="Set as primary (optional)">
+    Tick **Primary Transaction Route** if you want this account to process live payments. You can save a configuration without making it primary — useful for storing a backup or test account.
+  </Step>
+
+  <Step title="Save the configuration">
+    Click **Confirm & Save Connection**. The account card appears in the main list on the left.
+  </Step>
+</Steps>
+
+## Edit an existing configuration
+
+Click **Edit** on any account card in the account list. The configuration form on the right pre-fills with the existing values. Make your changes and click **Update Configuration**.
+
+## Delete a configuration
+
+Click the **trash icon** on any account card. A confirmation dialog warns you that deleting an active configuration will disrupt payment processing. Click **Delete Permanently** to confirm.
+
+<Warning>
+  Deleting the active primary account for a gateway will cause payment processing for that gateway to fail until a replacement account is configured and activated. Do not delete a live configuration without first setting up a replacement.
+</Warning>

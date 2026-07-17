@@ -1,0 +1,130 @@
+---
+title: "Manage Branches and US Warehouses"
+sidebarTitle: "Locations"
+description: "Add, edit, and deactivate local pickup branches and US warehouse addresses that customers use to ship packages to your courier network."
+---
+
+The Locations page is the central place to manage every physical address in your courier network. It has two sections: **Local Branches** — the offices and pickup points in your home country where customers collect their shipments — and **US Warehouses** — the American facility addresses you provide to customers so they can ship purchases directly to your consolidation point before onward delivery.
+
+To open Locations, click **Settings** in the left sidebar, then click **Locations**.
+
+---
+
+<Tabs>
+  <Tab title="Local Branches">
+
+    ## Local Branches
+
+    Local branches are your courier's physical offices, pickup points, and retail locations. Every branch gets a short code that appears on package labels and in the customer portal when a customer selects their preferred pickup point.
+
+    The branch list shows each branch's name, short code, address, phone number, and active/inactive status. A **HQ** badge marks your designated head office.
+
+    ### Add a new branch
+
+    <Steps>
+      <Step title="Open the Add Branch dialog">
+        On the **Locations** page, make sure the **Local Branches** tab is selected, then click **Add Branch** in the top-right corner.
+      </Step>
+
+      <Step title="Enter the branch name and short code">
+        - **Branch Name** — The full display name shown to customers (e.g., *Kingston Central*). Required.
+        - **Short Code** — A short uppercase identifier up to 10 characters (e.g., *KGN*). This appears on package labels. Required. The field automatically converts your input to uppercase.
+      </Step>
+
+      <Step title="Add contact details">
+        - **Phone Number** — The branch's direct phone line.
+        - **Address** — The full street address of the branch.
+      </Step>
+
+      <Step title="Optionally set as Head Office">
+        Tick **Set as Head Office** if this branch is your primary location. Only one branch can hold the HQ designation at a time — setting a new one will remove it from the previous branch.
+      </Step>
+
+      <Step title="Save the branch">
+        Click **Save Branch**. The new branch appears immediately in the list with an **Active** status toggle.
+      </Step>
+    </Steps>
+
+    ### Edit a branch
+
+    Hover over any branch row in the table to reveal the action icons on the right. Click the **pencil icon** to open the edit dialog. All fields — name, short code, phone, address, and head-office designation — are editable. Click **Save Branch** to apply your changes.
+
+    ### Deactivate or reactivate a branch
+
+    Each branch row contains a toggle switch in the **Status** column. Click the toggle to flip the branch between **active** and **inactive** instantly — no confirmation dialog is shown, so be deliberate.
+
+    <Warning>
+      Deactivating a branch removes it from the customer-facing pickup location list immediately. Any customers who have packages assigned to that branch can still collect them, but the branch will not appear as an option for new shipments.
+    </Warning>
+
+    ### Delete a branch
+
+    Hover over the branch row and click the **trash icon**. A confirmation dialog asks you to confirm permanent deletion. Deleted branches cannot be recovered.
+
+    <Note>
+      You cannot delete the currently active head-office branch. Assign HQ status to another branch first.
+    </Note>
+
+  </Tab>
+  <Tab title="US Warehouses">
+
+    ## US Warehouses
+
+    US warehouses are the American addresses you give to customers so they can have online purchases delivered there. Once packages arrive at the warehouse, your team consolidates and forwards them through your international courier service.
+
+    The warehouse list shows each warehouse's label and its full address including city, state, zip code, and country.
+
+    ### Add a warehouse
+
+    <Steps>
+      <Step title="Switch to the US Warehouses tab">
+        On the **Locations** page, click **US Warehouses** in the tab bar.
+      </Step>
+
+      <Step title="Click Add Warehouse">
+        Click the **Add Warehouse** button in the top-right corner.
+      </Step>
+
+      <Step title="Enter the warehouse label">
+        Provide a descriptive label that helps staff identify the facility (e.g., *AIR FREIGHT MIAMI* or *SEA CARGO FLORIDA*). This label is visible to customers in the portal. Required.
+      </Step>
+
+      <Step title="Enter the warehouse address">
+        Complete the full address fields:
+
+        | Field | Description |
+        |---|---|
+        | **Address Line 1** | Street number and name (e.g., *1234 NW 72nd Ave*). Required. |
+        | **City** | City where the warehouse is located. Required. |
+        | **State / Province** | US state abbreviation or full name (e.g., *FL* or *Florida*). Required. |
+        | **Zip / Postal Code** | US ZIP code. Required. |
+        | **Country** | Defaults to *USA*. Required. |
+      </Step>
+
+      <Step title="Set the warehouse as active">
+        Tick **Active Warehouse** to make the warehouse address visible to customers. Leave it unticked to save the address without publishing it yet.
+      </Step>
+
+      <Step title="Save the warehouse">
+        Click **Save**. The warehouse appears in the list immediately.
+      </Step>
+    </Steps>
+
+    ### Edit a warehouse
+
+    Hover over any warehouse row to reveal the **pencil icon** on the right. Click it to open the edit dialog, update the necessary fields, and click **Save**.
+
+    ### Deactivate a warehouse
+
+    Use the toggle switch in the **Status** column to deactivate a warehouse. Inactive warehouses are hidden from the customer portal but remain in your records.
+
+    <Tip>
+      If you are transitioning from one warehouse address to another, activate the new warehouse before deactivating the old one so customers always have a valid address available.
+    </Tip>
+
+    ### Delete a warehouse
+
+    Hover over the warehouse row and click the **trash icon**. Confirm in the dialog that appears. Deletion is permanent.
+
+  </Tab>
+</Tabs>

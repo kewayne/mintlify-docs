@@ -1,0 +1,93 @@
+---
+title: "Backroom Fulfillment: Live Counter Monitor"
+sidebarTitle: "Backroom"
+description: "Monitor the customer pickup queue in real time, track active counter sessions, and review a date-filtered log of all released packages."
+---
+
+The Backroom Fulfillment page is the operational heart of your warehouse counter. It gives every backroom team member a live, self-updating view of who is standing at which checkout station, which packages they are waiting to collect, and a running record of every package handed over during the day. You do not need to refresh the page — all updates stream in automatically the moment a customer is loaded onto a station by a cashier.
+
+<Note>
+The live feed requires an active internet connection at all times. If the page loses its connection to the real-time service, the status indicator in the top-right corner switches from a pulsing green **Live** badge to a red **Disconnected** badge. Reconnect your network and the page will resume streaming automatically. While disconnected, the queue may not reflect the latest counter activity.
+</Note>
+
+## Connection status indicator
+
+A small badge in the page header tells you whether the real-time link is active:
+
+<CardGroup cols={2}>
+  <Card title="Live (green)" icon="circle">
+    The page is connected and receiving instant updates from all checkout stations. No action required.
+  </Card>
+  <Card title="Disconnected (red)" icon="circle">
+    The real-time link is down. Use the **Refresh** button (circular arrows icon) to force a manual data reload while you restore the connection.
+  </Card>
+</CardGroup>
+
+## Active counter pickups
+
+The top section of the page shows the **Active Counter Pickups** grid — one card per customer currently standing at the counter. Each card displays:
+
+- **Customer name** — pulled from their account the moment they are loaded by the cashier.
+- **Station** — the checkout terminal the customer is assigned to (for example, `checkout 1`, `checkout 2`).
+- **Arrival time** — shown as a relative time such as "3m ago."
+- **Packages in the cart** — each package shows its local tracking number, the name on the package, and its warehouse bin location.
+
+If the cashier has not yet finished selecting packages, you will see *"Agent is selecting packages…"* inside the card while the system fetches the details.
+
+When the counter is fully clear — no customers waiting — the grid shows a single placeholder message so you know the queue is empty rather than assuming the page has not loaded.
+
+### Marking a session as picked
+
+Once you have physically pulled all packages from the shelf and handed them to the customer, click the **Mark as Picked** button at the bottom of the customer's card. This:
+
+1. Removes the card from the active queue immediately.
+2. Syncs the pick confirmation to the server.
+3. Triggers a refresh of the Released Packages table below.
+
+The removal is optimistic — the card disappears from your screen right away even before the server responds, keeping the interface fast during busy periods.
+
+## Toast notifications for new arrivals
+
+Every time a new customer is loaded onto any station, a dark toast notification slides up from the bottom-right corner of the screen. The notification shows the customer's name and the station they are at. An audio chime also plays to alert backroom staff who may not be watching the screen.
+
+Toasts dismiss themselves after six seconds, or you can close one early by clicking the **×** button.
+
+## Released packages feed
+
+Below the active queue, the **Released Packages** table records every package that has been handed over and confirmed during the selected day.
+
+| Column | What it shows |
+|---|---|
+| Tracking | The local tracking number assigned in your system |
+| Package Details | Name on the package and warehouse bin location |
+| Customer Account | First and last name of the account holder |
+| Time Released | The exact time the handover was confirmed (HH:MM format) |
+| Signature | A thumbnail of the customer's on-screen signature, or N/A if none was captured |
+
+### Filtering by date
+
+Use the **Filter Date** picker in the section header to view releases from any past date. Changing the date triggers a fresh data pull from the server automatically.
+
+## Using the backroom during peak hours
+
+<Steps>
+  <Step title="Open the Backroom page before doors open">
+    Navigate to **Backroom Fulfillment** from the sidebar and confirm the **Live** badge is green. If it shows red, refresh the page or check the network before customers arrive.
+  </Step>
+  <Step title="Watch for new customer cards">
+    When a cashier loads a customer, a new card appears in the queue and a toast notification chimes. Move to the shelves and begin pulling the packages listed in the card while the customer is still at the counter.
+  </Step>
+  <Step title="Verify packages against the card">
+    Each package row in the card shows the local tracking number and the bin location. Cross-check these against the physical labels before handing anything over.
+  </Step>
+  <Step title="Mark the session as picked">
+    After handing all packages to the customer, click **Mark as Picked** on their card. The card clears, and the packages move to the Released Packages table below.
+  </Step>
+  <Step title="Use the date filter at end of day">
+    At close of business, set the date filter to today and review the Released Packages table as your handover log. This record includes signatures and precise release times.
+  </Step>
+</Steps>
+
+<Tip>
+If you accidentally dismiss a card before handing over all packages, use the **Refresh** button to reload the queue from the server. Any session that was not yet fully completed will reappear.
+</Tip>

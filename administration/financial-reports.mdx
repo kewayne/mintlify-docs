@@ -1,0 +1,148 @@
+---
+title: "Running Financial Reports in the Backoffice"
+sidebarTitle: "Financial Reports"
+description: "Step-by-step guidance for the Revenue Summary, Outstanding Invoices, and Payment Methods reports — filters, column definitions, and export options."
+---
+
+The three Financial Reports give you a real-time view of money flowing in and out of the business. Use **Revenue Summary** to check earnings for any period, **Outstanding Invoices** to chase unpaid balances, and **Payment Methods** to understand how customers prefer to pay. All three are accessible from the All Reports page under the **Financial Reports** group.
+
+<Tabs>
+  <Tab title="Revenue Summary">
+    ## Revenue Summary
+
+    The Revenue Summary report breaks down everything your operation earned in a given period — gross revenue, applicable taxes, and service fees — so you can reconcile daily, weekly, or monthly totals without manual calculation.
+
+    ### What the Report Shows
+
+    | Column | Description |
+    |---|---|
+    | **Period** | The date or date range the row covers |
+    | **Gross Revenue** | Total charges billed to customers before deductions |
+    | **Taxes Collected** | Tax amounts included in customer invoices |
+    | **Service Fees** | Platform or handling fees charged on top of base rates |
+    | **Net Earnings** | Gross Revenue minus Taxes and Fees |
+
+    ### Running the Report
+
+    <Steps>
+      <Step title="Open Revenue Summary">
+        Go to **Reports** in the sidebar, then click the **Revenue Summary** card under Financial Reports.
+      </Step>
+      <Step title="Set a date range">
+        Use the **Start Date** and **End Date** fields at the top of the page to define the period you want to analyse. The report updates automatically when you change either date.
+      </Step>
+      <Step title="Review the totals">
+        The summary ribbon at the top of the page shows aggregate figures for your selected range. Scroll down to the table for a row-by-row breakdown.
+      </Step>
+      <Step title="Export the data">
+        Click **Export CSV** in the top-right corner to download the current filtered view as a spreadsheet. The export respects your active date range.
+      </Step>
+    </Steps>
+
+    <Tip>
+      Set the start date to the first of the current month and the end date to today to get a month-to-date revenue snapshot before running payroll or submitting financial summaries.
+    </Tip>
+  </Tab>
+
+  <Tab title="Outstanding Invoices">
+    ## Outstanding Invoices
+
+    The Outstanding Invoices report lists every invoice that has not been paid, grouped by how long it has been outstanding. Use it to identify overdue accounts and take action directly from the report without navigating away.
+
+    ### What the Report Shows
+
+    | Column | Description |
+    |---|---|
+    | **Invoice #** | Unique invoice reference number |
+    | **Customer** | Customer name and account code |
+    | **Invoice Date** | Date the invoice was generated |
+    | **Due Date** | Payment deadline |
+    | **Amount Due** | Outstanding balance remaining |
+    | **Aging Bucket** | How long the invoice has been unpaid (see below) |
+    | **Status** | Current invoice status (e.g. Unpaid, Partially Paid) |
+
+    ### Aging Buckets
+
+    Invoices are automatically sorted into aging buckets so you can prioritise collection efforts:
+
+    | Bucket | Definition |
+    |---|---|
+    | **Current** | Not yet past the due date |
+    | **1–30 Days** | Overdue by up to 30 days |
+    | **31–60 Days** | Overdue between 31 and 60 days |
+    | **61–90 Days** | Overdue between 61 and 90 days |
+    | **90+ Days** | Overdue more than 90 days — highest priority |
+
+    <Warning>
+      Invoices in the **90+ Days** bucket represent the highest collection risk. Review these first and follow up with the customer before writing off the balance.
+    </Warning>
+
+    ### Acting on Unpaid Invoices
+
+    <Steps>
+      <Step title="Open Outstanding Invoices">
+        Go to **Reports → Outstanding Invoices** from the All Reports page.
+      </Step>
+      <Step title="Filter by aging bucket">
+        Use the aging filter (where available) or sort the **Aging Bucket** column to surface the oldest unpaid invoices first.
+      </Step>
+      <Step title="Locate the customer">
+        Click the customer name in any row to open their full customer record in a new tab, where you can review their account history.
+      </Step>
+      <Step title="Open the invoice">
+        Click the invoice number to open the full invoice detail view, where you can record a payment, send a reminder, or void the invoice.
+      </Step>
+      <Step title="Export for follow-up">
+        Click **Export CSV** to download the outstanding invoice list and share it with your accounts or collections team.
+      </Step>
+    </Steps>
+
+    <Note>
+      Partial payments are reflected in the **Amount Due** column. An invoice does not leave this report until the full balance is cleared or the invoice is voided.
+    </Note>
+  </Tab>
+
+  <Tab title="Payment Methods">
+    ## Payment Methods
+
+    The Payment Methods report shows how customers are paying across your three accepted payment types — **Cash**, **Card**, and **Online** — over any date range you choose. Use it to identify trends, spot shifts in payment behaviour, and plan staffing or cash-handling requirements.
+
+    ### What the Report Shows
+
+    | Column / Metric | Description |
+    |---|---|
+    | **Payment Method** | Cash, Card, or Online |
+    | **Transaction Count** | Number of transactions processed via this method |
+    | **Total Collected** | Sum of all amounts received through this method |
+    | **% of Total Revenue** | This method's share of overall revenue in the period |
+
+    The report also includes a **visual chart** that plots each payment method's share as a proportional breakdown. The chart updates dynamically when you change the date range.
+
+    ### Reading the Chart
+
+    - **Bars or slices** represent the three payment types side by side.
+    - The **height or size** of each segment reflects total value collected, not just transaction count — a single large card payment will appear proportionally larger than several small cash transactions.
+    - Hover over any segment (where supported) to see the exact figure and percentage.
+
+    ### Running the Report
+
+    <Steps>
+      <Step title="Open Payment Methods">
+        Navigate to **Reports → Payment Methods** from the All Reports page.
+      </Step>
+      <Step title="Select your date range">
+        Set the **Start Date** and **End Date** to the period you want to review. The chart and table refresh automatically.
+      </Step>
+      <Step title="Compare methods">
+        Review the **% of Total Revenue** column to understand each method's contribution. A rising share of Online payments, for example, may indicate you can reduce cash-handling resources over time.
+      </Step>
+      <Step title="Export the data">
+        Click **Export CSV** to download a row-per-method breakdown for the selected period.
+      </Step>
+    </Steps>
+
+    <Tip>
+      Run this report at the end of each week alongside the Revenue Summary to confirm that collected cash matches the Cash total shown in the Payment Methods breakdown.
+    </Tip>
+  </Tab>
+</Tabs>

@@ -1,0 +1,133 @@
+---
+title: "Navigating the Shiipp Operations Dashboard"
+sidebarTitle: "Dashboard Overview"
+description: "A complete walkthrough of the Operations Dashboard — KPI cards, charts, sidebar sections, topbar controls, and how to refresh live data."
+---
+
+When you log in, the first screen you see is the **Operations Overview** — the central hub for your day-to-day courier work. It brings together real-time customer numbers, live package counts, incoming shipment data, and quick-access controls all in one place. Understanding what each section shows helps you stay on top of operations without having to dig through individual modules.
+
+## KPI Cards
+
+The four summary cards at the top of the dashboard give you an instant snapshot of the most important operational numbers.
+
+<CardGroup cols={2}>
+  <Card title="New Customers (Today)" icon="user-plus">
+    The number of customer accounts created today. The badge is labelled **Today** so you always know the data applies to the current calendar day.
+  </Card>
+  <Card title="Customers This Week" icon="users">
+    Total customers active or registered this week, accompanied by a growth percentage indicator that turns green for positive growth and red for a decline compared with the previous period.
+  </Card>
+  <Card title="Ready for Collection" icon="package">
+    Packages that have been processed and are waiting for customers to pick them up. This is one of the most operationally important numbers — watch it to know how busy your front desk will be.
+  </Card>
+  <Card title="Packages in Transit" icon="airplane-in-flight">
+    A live count of packages currently in transit to your facility. The badge is labelled **Live** and pulses to indicate the data is actively updated.
+  </Card>
+</CardGroup>
+
+## Charts
+
+Below the KPI cards, two charts help you spot trends at a glance.
+
+### Customer & Package Activity
+
+A combined line-and-bar chart covering the last **30 days**. The line tracks new customer sign-ups and the bars track packages processed. Hover over any date to see exact figures for both metrics.
+
+### Package Pipeline
+
+A doughnut chart showing the current distribution of all active packages across their pipeline statuses. Each segment represents a different status such as Ready for Collection, In Transit, At Customs, and so on. The delivered segment is excluded so the chart focuses only on packages that still require action.
+
+## Recent Customers and Incoming Shipments Tables
+
+The lower section of the dashboard contains two side-by-side tables.
+
+- **Recent Customers** — Lists the most recently registered customers with their Customer ID, full name, email, and join date.
+- **Incoming Shipments** — Shows up to five non-delivered shipments, displaying the flight date, shipment type (Air, Sea, or China), and current status. Shipments marked as *delivered* are automatically hidden from this list.
+
+## Sidebar Navigation
+
+The left-hand sidebar organises all backoffice features into five sections. Your role and permissions determine which items are visible to you.
+
+<Accordion title="Overview">
+  | Menu Item | Description |
+  |-----------|-------------|
+  | Dashboard | The Operations Overview page you are reading about now. |
+</Accordion>
+
+<Accordion title="Management">
+  | Menu Item | Description |
+  |-----------|-------------|
+  | Shipments | View and manage all shipment manifests (Air, Sea, China). |
+  | Customers | Browse, search, and manage customer accounts. |
+  | Packages | Track and update individual package records. |
+  | Check-Off | Scan barcodes to log package arrival and route them. |
+  | Pre Alerts | Review and link pre-alert notifications submitted by customers. |
+  | Backroom | Monitor the backroom queue and active delivery sessions in real time. |
+  | Deliveries | Manage outbound deliveries *(coming soon)*. |
+</Accordion>
+
+<Accordion title="Financial">
+  | Menu Item | Description |
+  |-----------|-------------|
+  | Point of Sale | Process in-person package collections and payments. |
+  | Transactions | View a full ledger of all financial transactions. |
+  | Day-End Report | Generate and review the end-of-day financial summary. |
+  | Invoices | Create, view, and manage customer invoices. |
+</Accordion>
+
+<Accordion title="Marketing">
+  | Menu Item | Description |
+  |-----------|-------------|
+  | Broadcast | Create and send broadcast campaigns to customers. |
+</Accordion>
+
+<Accordion title="Administration">
+  | Menu Item | Description |
+  |-----------|-------------|
+  | System Settings | Configure application-wide settings. |
+  | System Updates | Apply and review system updates (admin only). |
+</Accordion>
+
+<Note>
+  Menu items marked **NEW** or **COMING SOON** (such as Backroom and Deliveries) may have limited functionality or be read-only at your organisation's current version.
+</Note>
+
+## Topbar Controls
+
+The horizontal bar running across the top of every page provides global controls you can access from anywhere in the backoffice.
+
+<CardGroup cols={2}>
+  <Card title="Global Search" icon="magnifying-glass">
+    The search field in the topbar searches across customers, packages, pre-alerts, shipments, and invoices simultaneously. Use the keyboard shortcut **⌘K** (Mac) or **Ctrl+K** (Windows) to focus the search bar quickly. Results appear in a dropdown as you type.
+  </Card>
+  <Card title="Add Package" icon="package">
+    The package icon with a plus badge opens the **Receive New Package** modal, letting you log an incoming package without leaving your current page.
+  </Card>
+  <Card title="Broadcast" icon="megaphone-simple">
+    The megaphone icon opens the Campaign Manager for sending or scheduling broadcast messages.
+  </Card>
+  <Card title="System Updates" icon="rocket-launch">
+    The rocket icon navigates to the System Updates page. A green badge appears on this icon when a new update is available.
+  </Card>
+  <Card title="Recent Receipts" icon="printer">
+    The printer icon opens a modal showing recently printed receipts for quick reprint access.
+  </Card>
+  <Card title="Profile Menu" icon="user-circle">
+    Click your avatar in the top-right corner to access your profile settings or log out of the backoffice.
+  </Card>
+</CardGroup>
+
+## Refreshing Dashboard Data
+
+The dashboard loads its data automatically when you open it. To manually refresh all KPI cards, charts, and tables:
+
+1. Locate the **circular arrow** (refresh) button next to the current date display in the dashboard header.
+2. Click it. The dashboard shows a loading overlay while it fetches fresh data from the server.
+
+<Tip>
+  If you see a "Network connection error" message instead of data, check your internet connection and click the refresh button once it is restored. Your session is still active.
+</Tip>
+
+## Error States
+
+If the server cannot be reached or returns an error, a red alert bar appears below the header with the error message. Common causes include a temporary network interruption or an expired session. If your session has expired, the dashboard automatically redirects you to the login page.

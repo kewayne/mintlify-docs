@@ -1,0 +1,127 @@
+---
+title: "Package Lifecycle: From Pre-Alert to Delivery"
+sidebarTitle: "Package Lifecycle"
+description: "Understand every stage a package moves through in the Shiipp system, what each status means for staff and customers, and who can update each stage."
+---
+
+Every package that passes through your facility follows a defined lifecycle — a sequence of statuses that reflects where the package physically is and what action is required next. Understanding this lifecycle helps you answer customer queries instantly, keep your team aligned, and ensure nothing falls through the cracks. The system records a timestamped history log entry every time a status changes, giving you a complete audit trail.
+
+## The Package Pipeline
+
+The diagram below shows the typical path a package travels from the moment a customer files a pre-alert to the moment it is delivered or collected.
+
+<Steps>
+  <Step title="Pre-Alert Filed (Pending)">
+    **Who creates it:** The customer, via their self-service portal.
+
+    **What it means:** The customer has told you a package is on its way from a merchant. At this stage no physical package exists in your system — only the pre-alert record. In the Pre Alerts module, these records appear with the status **Pending Arrival**.
+
+    **Staff action required:** No immediate action needed. Monitor the Pre Alerts queue and be ready to link the record once the package physically arrives.
+  </Step>
+
+  <Step title="Package Received (Linked)">
+    **Who updates it:** Any staff member with package access.
+
+    **What it means:** The physical package has arrived at your overseas or local warehouse and a package record has been created. If a matching pre-alert existed, it is linked to the new package record and its status changes to **Linked to Package**. The package now appears in the Packages module.
+
+    **Staff action required:** Verify that the package details match the pre-alert (tracking number, customer name, weight). A name mismatch alert is shown on the Check-Off screen if the customer name on the label differs from the account.
+  </Step>
+
+  <Step title="Checked Off & Sorted">
+    **Who updates it:** Staff using the Check-Off & Sort module.
+
+    **What it means:** The package has been scanned using the barcode scanner on the Check-Off page, confirming physical receipt at the facility and routing it to the correct backroom section. Voice confirmation feedback is available on the scan screen.
+
+    **Staff action required:** Scan the package barcode. The system automatically logs the check-off event and updates the package record.
+
+    <Note>
+      The Check-Off page warns you if a package is already checked off to prevent duplicate scans.
+    </Note>
+  </Step>
+
+  <Step title="In the Backroom">
+    **Who monitors it:** Backroom staff and managers via the Backroom module.
+
+    **What it means:** The package is physically stored in the backroom awaiting customer collection or dispatch for delivery. The Backroom page provides a live, real-time view of all packages currently in this state along with active delivery sessions.
+
+    **Staff action required:** Keep the backroom organised. Prepare packages for the Point of Sale collection workflow or schedule outbound deliveries.
+  </Step>
+
+  <Step title="In Transit to Country / Processing Customs">
+    **Who updates it:** Staff or managers with package update permissions.
+
+    **What it means:** These intermediate statuses reflect the package's journey through customs and transit to the destination country. They are typically applied in bulk via the Package Status & Notifications modal attached to a shipment manifest.
+
+    **Statuses in this group:**
+    - `in_transit_jm` — In Transit to Country
+    - `at_customs` — At Customs
+    - `processing_customs` — Processing Customs
+
+    **Staff action required:** Update the status as the shipment moves through each stage. The system can send automatic customer notifications when you update statuses.
+  </Step>
+
+  <Step title="Ready for Collection">
+    **Who updates it:** Staff or managers with package update permissions.
+
+    **What it means:** The package has cleared customs and is available at your facility for the customer to collect. The **Ready for Collection** count appears directly on the Operations Dashboard KPI card so your front desk always knows how many customers to expect.
+
+    **Customer impact:** Customers receive a notification (if notifications are enabled) prompting them to visit the facility or arrange a delivery.
+
+    **Staff action required:** Ensure the package is accessible and clearly labelled in the collection area. Process the customer's visit through the Point of Sale module.
+  </Step>
+
+  <Step title="Delivered or Picked Up">
+    **Who updates it:** Staff at the Point of Sale or managers updating package status directly.
+
+    **What it means:** The package journey is complete. The two possible final statuses are:
+    - `delivered` — The package was dispatched to the customer's address.
+    - `ready_for_collection` resolved via POS — The customer collected the package in person.
+
+    **Staff action required:** Mark the package as **Delivered** after a successful home delivery. For in-person collections, the Point of Sale workflow handles the status update automatically.
+
+    <Note>
+      Delivered packages are excluded from the Pipeline chart on the Operations Dashboard so the chart focuses on packages still requiring action.
+    </Note>
+  </Step>
+</Steps>
+
+## Status Reference Table
+
+The table below lists all package statuses used in the system, including intermediate states.
+
+| Status Code | Display Name | Stage | Customer Visible |
+|---|---|---|---|
+| `pending` | Pending Arrival | Pre-Alert | Pre-alert only |
+| `received` | Linked to Package | Received | Via pre-alert link |
+| `in_transit_jm` | In Transit | Overseas transit | Yes |
+| `at_customs` | At Customs | Customs | Yes |
+| `processing_customs` | Processing Customs | Customs | Yes |
+| `ready_for_collection` | Ready for Collection | In facility | Yes — notification sent |
+| `on_hold` | On Hold | Any stage | Yes |
+| `delivered` | Delivered | Complete | Yes |
+
+<Tip>
+  Administrators can add, rename, reorder, and colour-code custom statuses under **Settings → Package Statuses** to match your organisation's specific workflow.
+</Tip>
+
+## Bulk Status Updates
+
+When a shipment arrives, you often need to update dozens of packages at once. Use the **Package Status & Notifications** modal (accessible from the Shipments detail page) to:
+
+- Apply a new status to all packages in the shipment, or filter to only update packages already at a specific status.
+- Add a history note that appears in each package's audit log.
+- Send customer notifications as part of the same action or resend previous notifications without changing the status.
+
+## Who Can Update Package Statuses
+
+| Action | Roles |
+|--------|-------|
+| View package status | All roles with `packages:view` permission |
+| Check-Off scan | Roles with `packages:view` permission |
+| Update single package status | Staff, Manager, Admin |
+| Bulk status update via shipment | Manager, Admin |
+| Delete a package record | Admin |
+
+<Warning>
+  Status changes are permanent and logged. Avoid setting a package to **Delivered** prematurely — it removes the package from the active Pipeline chart and may confuse customers who have not yet collected their item.
+</Warning>

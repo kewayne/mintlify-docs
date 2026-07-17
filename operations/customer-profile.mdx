@@ -1,0 +1,201 @@
+---
+title: "Customer Profile: View and Manage Account Details"
+sidebarTitle: "Customer Profile"
+description: "Understand every section of the customer profile — personal details, wallet, packages, invoices, financials, and pre-alerts — and learn how to edit or adjust them."
+---
+
+The customer profile is the complete record for a single account. It brings together every piece of information the team needs to support a customer in one place: who they are, what packages they have, what they owe, and a full history of their financial activity. You reach this page by clicking a customer's name anywhere in the backoffice, or by navigating directly to **Customers → [Customer Name]**.
+
+The header of the page shows the customer's full name, their unique customer code badge, and a verified / unverified status indicator. Their email and phone number appear just below the name. A row of **summary stat cards** at the top gives you the five most important numbers at a glance before you dive into any tab.
+
+---
+
+## Summary stat cards
+
+| Card | What it shows |
+|---|---|
+| **Unpaid Balance** | Total outstanding amount across all unpaid and draft invoices. Displays in red when greater than zero. |
+| **Wallet Balance** | Current prepaid credit available in the customer's wallet. |
+| **Ready for Pickup** | Number of packages currently at the branch waiting to be collected. |
+| **Incoming** | Packages in transit that have not yet arrived at the warehouse. |
+| **Total Packages** | Lifetime count of all packages linked to the account. |
+
+---
+
+## Profile tabs
+
+The profile is organised into five tabs. Click a tab to switch between sections. Each tab shows a live count badge where relevant.
+
+<Tabs>
+  <Tab title="Overview">
+    The **Overview** tab shows two panels side by side.
+
+    **Profile Information** lists the customer's contact and account details:
+
+    - **Mailing address** — street address, city, and parish
+    - **TRN** (Tax Registration Number) — masked by default; click the eye icon to reveal the full number
+    - **Branch Assignment** — the branch the account is linked to, or *Global* if unassigned
+    - **Account Created** — the date the account was registered
+
+    **Authorized Pickups** lists every person the customer has authorised to collect packages on their behalf. Each entry shows the person's full name, phone number, and ID number. If no authorised users have been added, the panel shows a placeholder message.
+  </Tab>
+
+  <Tab title="Packages">
+    The **Packages** tab lists every package that has ever been associated with this account, most recent first (up to the most recent 50 records).
+
+    Each row shows:
+
+    | Column | Details |
+    |---|---|
+    | **Tracking** | Carrier logo (if available), shipper tracking number, and local Shiipp tracking number. Click the local tracking number to open the full package detail page. |
+    | **Description** | Vendor/store name and the package description |
+    | **Weight** | Actual weight in pounds |
+    | **Value** | Customer-declared value in USD |
+    | **Documents** | A file icon button that opens any attached invoice or customs document |
+    | **Status** | Colour-coded status badge (e.g. Ready for Pickup, In Transit, Delivered) |
+    | **Invoice** | The invoice total and payment status for this package; click to open the invoice modal |
+
+    Click any row to navigate directly to the package detail page.
+  </Tab>
+
+  <Tab title="Invoices">
+    The **Invoices** tab shows the complete billing history for the customer.
+
+    Each row displays:
+
+    - **Invoice #** — click to open the full invoice in the invoice modal
+    - **Date** — when the invoice was created
+    - **Items** — number of packages on the invoice
+    - **Total / Due** — the invoice total and any outstanding balance (shown in red when greater than $0.05)
+    - **Status** — Paid, Unpaid, Partial, or Draft
+
+    Click any invoice row to open it in the invoice detail modal where you can record payments, update line items, or download a PDF.
+  </Tab>
+
+  <Tab title="Financials">
+    The **Financials** tab is split into two panels: **Payment History** and **Wallet Transactions**.
+
+    **Payment History** shows every payment the customer has made against an invoice, including:
+    - Date and time
+    - Payment method (Cash, Card, Wallet, Bank Transfer, etc.) and reference number
+    - Amount credited (shown in green)
+
+    **Wallet Transactions** is the full chronological ledger of the customer's wallet — every top-up, deduction, adjustment, and usage. Each entry shows:
+    - Date
+    - Description and reference ID
+    - Amount — credits in green with a `+` prefix, debits in red with a `−` prefix
+
+    Both panels are independently scrollable and show the 50 most recent records.
+  </Tab>
+
+  <Tab title="Pre-Alerts">
+    The **Pre-Alerts** tab lists every shipment the customer has pre-alerted (notified the team about before the package arrives at the warehouse).
+
+    Each pre-alert row shows:
+
+    - Carrier logo and tracking numbers (shipper and local)
+    - Vendor and description
+    - Declared value in USD
+    - Attached invoice document (if uploaded by the customer)
+    - Current status badge
+    - Date the pre-alert was submitted
+  </Tab>
+</Tabs>
+
+---
+
+## Editing customer details
+
+<Steps>
+  <Step title="Locate the customer">
+    Open the customer profile by navigating from the **Customers** list or the global search.
+  </Step>
+  <Step title="Open Edit Profile">
+    In the backoffice view, click **Actions → Edit Profile** in the top-right area of the profile header. The Edit Profile modal opens with all current details pre-filled.
+  </Step>
+  <Step title="Update the fields">
+    You can edit any of the following:
+
+    - **First Name** and **Last Name**
+    - **Email address**
+    - **Phone number**
+    - **TRN** (Tax Registration Number)
+    - **Street address**, **City**, and **Parish**
+  </Step>
+  <Step title="Save changes">
+    Click **Save** (or the equivalent submit button). The page reloads and displays a green success banner confirming the update. Changes take effect immediately.
+  </Step>
+</Steps>
+
+---
+
+## Adjusting the account wallet balance
+
+You may need to manually credit or debit a customer's wallet — for example, to apply a goodwill credit, correct a data-entry error, or reverse a charge.
+
+<Note>
+  Manual wallet adjustments are logged against your staff account ID and are permanent. The customer receives an automated email notification when their wallet is updated. Always ensure you have appropriate authorisation from your supervisor before making any manual adjustment, and include a clear description so the transaction is auditable.
+</Note>
+
+<Steps>
+  <Step title="Locate the customer profile">
+    Open the customer's profile page.
+  </Step>
+  <Step title="Open the wallet adjustment modal">
+    In the **Wallet** card on the left side of the profile, click:
+
+    - **Top Up** — to add credit to the wallet (a `credit` transaction)
+    - **Debit** — to remove credit from the wallet (a `debit` transaction)
+
+    The wallet adjustment modal opens.
+  </Step>
+  <Step title="Enter the adjustment details">
+    Fill in:
+
+    - **Amount** — the value in USD to credit or debit
+    - **Description** — a short explanation of why the adjustment is being made (e.g. "Goodwill credit — delayed delivery", "Correction for duplicate charge")
+  </Step>
+  <Step title="Confirm the adjustment">
+    Click **Save**. The wallet balance updates immediately and the transaction appears in the **Financials → Wallet Transactions** tab. An email notification is sent to the customer automatically.
+  </Step>
+</Steps>
+
+<Warning>
+  There is no built-in undo for wallet adjustments. If you make an error, you must create a second offsetting transaction (e.g. a debit to cancel an incorrect credit) and note the reason in the description field.
+</Warning>
+
+---
+
+## Managing authorized pickup users
+
+Customers can designate other people to collect packages on their behalf. You can add, edit, or remove these authorised collectors from the **Overview** tab.
+
+<Steps>
+  <Step title="Go to the Overview tab">
+    Select the **Overview** tab on the customer profile.
+  </Step>
+  <Step title="Add a new collector">
+    Click **Add New** in the **Authorized Pickups** panel. Fill in the person's first name, last name, ID type, and ID number, then save.
+  </Step>
+  <Step title="Edit or remove a collector">
+    Click the **pencil** icon next to an existing entry to update their details, or click the **trash** icon to remove them. Confirm the deletion when prompted.
+  </Step>
+</Steps>
+
+---
+
+## Opening the customer in the POS
+
+When a customer is at the counter to collect or pay for packages, open the Point of Sale directly from their profile so all charges are automatically linked to their account.
+
+Click the **Open POS** button in the top-right corner of the profile header. This navigates to the POS screen with the customer pre-loaded, ready to process payments or issue invoices.
+
+<Tip>
+  You can also open the POS directly from the **Customers** list. Click the **⋯** three-dot menu on any row and choose **View Profile**, then click **Open POS** from the profile — or navigate directly via the URL pattern `/pos/[customer-id]`.
+</Tip>
+
+---
+
+## Navigating back to the customers list
+
+Use the breadcrumb trail at the top of the profile page (**Dashboard → Customers → Customer Name**) to return to the full customers list at any time, or use the sidebar navigation under **Customers**.

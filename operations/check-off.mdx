@@ -1,0 +1,141 @@
+---
+title: "Check-Off & Sort: Scanning Packages on Arrival"
+sidebarTitle: "Check-Off & Sort"
+description: "Use the Check-Off page to scan barcodes as packages arrive, confirm routing to the correct branch, and maintain a live session log of all scanned items."
+---
+
+Check-Off & Sort is the arrival scanning station in the backoffice. As parcels physically arrive at your facility, you scan each one here to log it as received, identify the customer it belongs to, and confirm which branch it should be routed to. The page is designed for high-speed, continuous scanning — it stays focused on the input field so that every barcode scan from a USB reader fires immediately without any extra clicks.
+
+## Opening Check-Off & Sort
+
+In the left sidebar, click **Check-Off & Sort**. The page loads in a focused two-column layout: the scanner panel on the left and the session history log on the right.
+
+---
+
+## The Scanner Input Field
+
+The barcode input field in the top-left panel is always active. You do not need to click it before scanning.
+
+<Tabs>
+  <Tab title="USB barcode scanner">
+    Point your scanner at the package barcode and pull the trigger. The scanner types the tracking number into the field and submits it automatically. No keyboard interaction is needed.
+  </Tab>
+  <Tab title="Manual entry">
+    Click inside the **Scan Barcode** field, type the tracking number, and press **Enter** to submit.
+  </Tab>
+</Tabs>
+
+<Note>
+  The input field re-focuses automatically after every scan — including after errors — so you can scan the next package immediately without touching the keyboard or mouse.
+</Note>
+
+---
+
+## Scanning Workflow
+
+<Steps>
+  <Step title="Open Check-Off & Sort">
+    Navigate to **Check-Off & Sort** in the sidebar. The scanner field is ready and focused.
+  </Step>
+  <Step title="Scan the first package">
+    Scan or type the barcode on the parcel. The system looks up the tracking number and returns the result within seconds.
+  </Step>
+  <Step title="Read the result card">
+    A result card appears on the left panel showing:
+    - **Route To** — the branch name where the package should be placed (displayed prominently in large text)
+    - **Customer name and account number**
+    - **Label Name** — the name printed on the package label
+    - **Local tracking number** and **shipper tracking number**
+    - **Weight** and **item description**
+  </Step>
+  <Step title="Route the package">
+    Place the package in the bin or area corresponding to the branch shown on the result card.
+  </Step>
+  <Step title="Scan the next package">
+    The input field is already focused. Scan the next barcode. The result card updates instantly and the previous scan moves into the session history log on the right.
+  </Step>
+  <Step title="Continue until the manifest is complete">
+    Work through the entire manifest. Each scan adds one entry to the session log. The log header shows the running count of items scanned in the current session.
+  </Step>
+</Steps>
+
+---
+
+## Scan Results: Success vs. Not Found
+
+<CardGroup cols={2}>
+  <Card title="Successful scan" icon="check-circle">
+    The result card appears with a **green header** labelled "Success". The branch name, customer details, and package information are displayed. If voice is enabled, the branch name is read aloud.
+  </Card>
+  <Card title="Name mismatch alert" icon="warning">
+    A **red header** labelled "Name Mismatch Alert" appears. This means the name on the package label does not match the customer's registered name on the account. Set the package aside for supervisor review before routing.
+  </Card>
+</CardGroup>
+
+<CardGroup cols={1}>
+  <Card title="Package not found" icon="x-circle">
+    A red error banner appears below the scanner field with the message **"Package not found or already checked off."** This can mean the tracking number is not in the system, it belongs to a different facility, or it has already been scanned in a previous session. Verify the barcode and re-scan. If the problem persists, check the Packages list or contact your supervisor.
+  </Card>
+</CardGroup>
+
+---
+
+## Voice Feedback
+
+The voice toggle in the top-right control bar lets you enable spoken routing instructions — useful in noisy warehouse environments where you cannot always look at the screen.
+
+- **On** — after each successful scan, the system reads the branch name aloud (e.g. "Kingston Branch"). On a name mismatch, it announces "Warning. Name mismatch." followed by the branch name.
+- **Off** — no audio is played.
+
+To toggle voice, click the small switch next to the **Voice** label. The setting is saved in your browser, so it persists across sessions on the same device.
+
+<Tip>
+  If you are scanning in a quiet back-office environment, leave voice off to avoid disturbing colleagues. In a warehouse or loading dock, voice on lets you keep your eyes on the packages rather than the screen.
+</Tip>
+
+---
+
+## Session History Log
+
+The right-hand panel maintains a live log of every package scanned since the session started.
+
+- The **most recent scan** is always at the top and highlighted with a purple border.
+- Each entry shows the customer name, account number, package label name, shipper tracking number, the routed branch, and the time of scan.
+- A sequential counter on the left of each row lets you quickly spot duplicate scans or gaps in the manifest.
+- The **Items** badge in the log header updates in real time with the running total.
+
+---
+
+## Clearing the Session
+
+The **Clear** button (bin icon) in the top-right control bar wipes the entire session history and resets the result card.
+
+<Warning>
+  Clearing the session is irreversible. All scan records in the current session are removed from the screen. Only clear the session after you have confirmed the manifest is complete and all routing is done. Session data is not automatically saved to a report — if you need a record, note the final item count before clearing.
+</Warning>
+
+When you click Clear, the browser asks you to confirm. Click **OK** to proceed or **Cancel** to go back.
+
+---
+
+## Tips for Efficient Scanning
+
+<Accordion title="Keep the browser window in focus">
+  The scanner input only accepts keystrokes when the Check-Off & Sort browser tab is active and in the foreground. If your scanner stops responding, click anywhere on the page (outside a button or link) to restore focus to the input field.
+</Accordion>
+
+<Accordion title="Work from one side of the manifest">
+  Sort your incoming parcels into a single physical queue before scanning. Scan each package exactly once and move it immediately to the correct routing bin. This prevents double-scans and keeps the session log accurate.
+</Accordion>
+
+<Accordion title="Monitor the mismatch rate">
+  A high volume of Name Mismatch alerts may indicate that customers are shipping to the facility under a name that differs from their registered account (a family member's name, a nickname, etc.). Flag these customers for a profile update so future deliveries match automatically.
+</Accordion>
+
+<Accordion title="Use a dedicated scanning device">
+  For high-volume days, dedicate one workstation exclusively to Check-Off & Sort. Because the page auto-focuses the input, no other browser tabs or applications should compete for keyboard input on that machine.
+</Accordion>
+
+<Accordion title="Reset between manifests">
+  Clear the session at the end of each manifest or shipment arrival, not at the end of the day. This way, each session log corresponds to one manifest and the item count is meaningful for reconciliation.
+</Accordion>
