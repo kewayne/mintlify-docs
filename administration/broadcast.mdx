@@ -22,9 +22,11 @@ At the top of the composer, select the channel you want to use:
   <Card title="Email" icon="envelope">
     Sends a fully formatted HTML email. Supports rich text, images, and personalization variables. Open-rate tracking is available for email campaigns.
   </Card>
+
   <Card title="WhatsApp" icon="whatsapp">
     Sends a plain-text message via WhatsApp. Use `*asterisks*` for bold text. No HTML or images are supported.
   </Card>
+
   <Card title="Push Notification" icon="bell">
     Sends a mobile push notification to customers who have the app installed. Supports a title, short body, an optional image URL, and an optional deep-link route.
   </Card>
@@ -35,6 +37,10 @@ At the top of the composer, select the channel you want to use:
 ## Composing Your Message
 
 ### Email
+
+<Frame>
+  ![Image](/images/image.png)
+</Frame>
 
 <Steps>
   <Step title="Select a template (optional)">
@@ -70,12 +76,12 @@ Fill in the **Notification Title** (shown in bold on the device), the **Notifica
 Insert dynamic variables to address each customer by name or reference their account. The following variables are available across all channels:
 
 | Variable | Replaced with |
-|---|---|
+| --- | --- |
 | `{first_name}` | Customer's first name |
 | `{last_name}` | Customer's last name |
 | `{member_id}` | Customer's account ID |
-| `{email}` | Customer's email address *(email channel only)* |
-| `{phone_number}` | Customer's phone number *(email channel only)* |
+| `{email}` | Customer's email address _(email channel only)_ |
+| `{phone_number}` | Customer's phone number _(email channel only)_ |
 
 For email, use the **Insert Variable** toolbar button. For WhatsApp and push notifications, click the labelled chip buttons displayed below the content area.
 
@@ -89,8 +95,15 @@ The **Audience** panel on the right side of the page controls who receives your 
   <Tab title="By Group">
     Select **By Group** and choose a segment from the dropdown:
 
+    <img
+      src="/images/image-1.png"
+      alt="Image"
+      title="Image"
+      style={{ width:"52%" }}
+    />
+
     | Segment | Who it targets |
-    |---|---|
+    | --- | --- |
     | All Verified Customers | Every customer with a verified account |
     | Ready for Pickup | Customers with packages awaiting collection |
     | At US Facility | Customers with packages currently at the US warehouse |
