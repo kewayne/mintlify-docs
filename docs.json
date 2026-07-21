@@ -54,7 +54,8 @@
             "group": "Customers",
             "pages": [
               "operations/customers",
-              "operations/customer-profile"
+              "operations/customer-profile",
+              "operations/merge-customers"
             ]
           },
           {
@@ -76,7 +77,8 @@
             "pages": [
               "administration/reports-overview",
               "administration/financial-reports",
-              "administration/operations-reports"
+              "administration/operations-reports",
+              "administration/email-logs"
             ]
           },
           {
@@ -87,7 +89,8 @@
               "administration/rates",
               "administration/payment-gateways",
               "administration/notification-templates",
-              "administration/user-management"
+              "administration/user-management",
+              "administration/system-update"
             ]
           },
           {
